@@ -9,7 +9,7 @@ cd <project-root>/database/
 ./create-capstone-db.sh
 ```
 
-This Bash script will drop the existing database (if necessary), create a new databsae named `capstone`, and run the various SQL scripts in the correct order. You do not need to modify the Bash script.
+This Bash script will drop     the existing database (if necessary), create a new databsae named `capstone`, and run the various SQL scripts in the correct order. You do not need to modify the Bash script.
 
 Each of the SQL scripts has a specific purpose as described below:
 
