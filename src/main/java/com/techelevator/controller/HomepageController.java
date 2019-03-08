@@ -12,9 +12,17 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 public class HomepageController {
 	
-	@RequestMapping(path = { "/", "/homepage" })
+	@RequestMapping(path = { "/homepage" })
 	public String viewCart(HttpServletRequest request) {
 				
 		return "homepage";
 	}
+	
+	
+	@RequestMapping(path = { "/", "/homepage0" })
+	public String viewCC(HttpServletRequest request) {
+				
+		return "homepage0";
+	}
+
 }

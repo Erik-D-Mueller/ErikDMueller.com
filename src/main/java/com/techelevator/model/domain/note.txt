@@ -1,9 +1,10 @@
 These are just classes to be instantiated to create objects.
+
 An object is an instantiated class.
 We can use the dot property after an object to access its values or functions.
 Variables inside of an object are commonly called "instance variables" or "attributes".
 
-The attributes in a class are undefined since we have not yet instantiated the class into a specific object with values.
+The attributes in a class are usually undefined since we have not yet instantiated the class into a specific object with values.
 The first letter of a class name is usually capitalized.
 
 Robot r1 = new Robot();  // This creates a new object from the class of Robot (if we had one)
@@ -213,9 +214,12 @@ In Java 1.8 we CAN define a method in the interface if we write the word "defaul
 
 Java doesn't allow "multiple inheritance", ( linear obviously not included )
  
- 
  Class has more power than interface, so if there is a class that extends a superclass and ikmplements an interface, and
  the same method is written in both, and the interface happens to have a "default" defn, even though most don't, the class
  definition would take precedence.
+ 
+ "extends" goes before "implements" if we are using both.
+ In Abstract classes, you can make the methods abstract or you can define them right there, just depends on the situation.
+ 
  
  

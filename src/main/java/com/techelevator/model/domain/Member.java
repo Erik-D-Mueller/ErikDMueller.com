@@ -1,5 +1,7 @@
 package com.techelevator.model.domain;
 
+
+// list is an interface
 import java.util.List;
 
 public class Member {
