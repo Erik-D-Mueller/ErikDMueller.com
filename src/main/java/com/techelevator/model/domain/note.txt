@@ -1,0 +1,142 @@
+These are just classes to be instantiated to create objects.
+An object is an instantiated class.
+We can use the dot property after an object to access its values or functions.
+Variables inside of an object are commonly called "instance variables" or "attributes".
+
+The attributes in a class are undefined since we have not yet instantiated the class into a specific object with values.
+The first letter of a class name is usually capitalized.
+
+Robot r1 = new Robot();  // This creates a new object from the class of Robot (if we had one)
+
+The first part is "how we talk to it" the second part is what it actually is.  In this case both
+are robot but sometimes we might want to talk to it a different way, like through an interface.
+
+Doing it the above way it doesn't have it's instance variables set yet.  We could use the dot
+operator to set them.  r1.name = "tom";
+
+We can also use the dot operator to use the methods, like r1.introduceSelf(); if we there
+a function with that name inside that class.
+
+Sometimes we use the word "this" inside a class, "this" refers to the object that the object-function
+has been called from.
+
+So if I call r1.introduceSelf();  and the word "this" is inside the method defn of
+introduceSelf inside the class, the "this" refers to the r1 object.  So it allows me to
+say "this" and then use the dot operator on it inside the method defn in the class.
+
+A "constructor", in the sense as we are going to discuss, is a method inside the class
+that sets the values inside the object at the same time that the object is being instantiated, as opposed
+to having to set the values afterward.
+
+Constructors have a specific format:  The constructor has the same name as the class 
+and the parameters have the same names as the outer variables.
+
+
+++++++++++++++++
+
+class Robot {
+String name;
+String color;
+int weight;
+
+
+Robot(String name, String color, int weight){
+this.name = name;
+this.color = color;
+this.weight = weight;
+}
+
+
+}
+
+++++++++++++++++
+
+If we are using a constructor then we likely need to actually send values at the time of instantiation,
+we would do so like this:
+
+Robot r1 = new Robot("Tom", "red", 30);
+
+"brilliant.org/practice/memory-layout" has good info for how computer memory works.
+
+A class/object can have a value that contains another class/object
+
+class Person {
+	String name;
+	String personality;
+	boolean isSitting;
+	Robot robotOwned;
+	
+		...	
+		
+}
+
+The robot object could then be put into the person object.
+
+If the "robotOwned" attribute is not part of the constructor, then we would say p1.robotOwned = r2;  where p1 is a person oject and r2 is a robot object.
+
+If we have an object, thats an attribute of another object, we can still work with
+the subobject, we just do add on more dot operators:
+
+p1.robotOwned.introduceSelf();
+
+The dot operator grabs the subthing with that name.
+
+A class can even have one of its own objects as one of its attributes.  With the robot example, they could
+both have Robot isLookingAt;   which would be were the robot object that they're looking at is documented and stored.
+
+Classes can have public or private variables.  Public variables can be read or written directly with the dot operator, like
+r1.color = "red".   Private variables can only be accessed from within that class/object which basically
+means that the programmer cannot use the dot operator to read or write that function directly, instead a function has to be called to 
+read or write those values.  Usually the purpose of this to verify that the incoming data is valid before applying it.  For example a
+ persons age cannot be negative, and probably not above 150.
+ 
+ The words "public", or "private" when written before classes or variables are "access modifiers".
+ 
+ There are 5 main access modifiers:  Default, public, private, protected, static.
+ (static means something never gets instantiated, thats it)
+ 
+ Access modifiers can be used for classes, variables, methods and constructors.
+ 
+ If we don't specifcy the access of a class then it usually becomes "default", which usually means it's only
+ available to items in the same package in the explorer window.
+ Variables are usually default since we usually don't specify infront of variables.
+ 
+ If we want to access and use a class that's defined in a different package then we have to use the "import" feature,
+but if the class is in the same package, then it should automatically "show up" without having to import it.
+ 
+ If we had two packages in the explorer window in our project, Package1 and Package2, and package1 had a file 
+ in it called ClassTemplate.java and we wanted to be able to use things from that file from within a file
+ that;s in another package, we would write at the top of other file:  import Package1.ClassTemplte;
+  
+ As far as I understand, for the most part, each class goes in it's own file, in Java, or atleast that
+ seems to have be a common way to do it.
+ 
+
+Public means something is "visible to the entire world" (although they still have to import it if they're in a
+different package)
+The public vs private doesn't mean it automatically shows up without any effort, it just means you're allowed to import it,
+ otherwise importing it won't work.
+ 
+ "protected" means something is available to that package and all the subclasses.
+ 
+This might be outdated, but:
+ 
+ Variables:
+ If no written access modifier is present then it's "default" which means it's visible only to the package.
+ "Public" means it's visible to the world ( still has to be imported )
+ "Protected" means it's visible to the package and all subclasses which is more "open" than the default.  That is mostly
+ there for inheritence.
+ 
+Private means that it is visible to the class only, and is the most restrictive.
+Intellisense will commonly show us "what's visible".
+
+With all of the above, even if its available, you still have to "import it".
+
+Methods:
+ 
+ 
+ 
+ 
+
+
+ 

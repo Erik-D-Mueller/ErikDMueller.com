@@ -1,12 +1,16 @@
 package com.techelevator.model.domain;
 
 public abstract class Tool {
-
+	
+    // These are the instance variables of this class
+	//We usually write them first
 	private int toolId;
 	private String toolName;
 	private String toolDescription;
 	private boolean isAvailable;
 	
+	
+	//These are the methods of this class
 	public int getToolId() {
 		return toolId;
 	}
