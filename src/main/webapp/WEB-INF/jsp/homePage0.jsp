@@ -90,48 +90,13 @@
 						</tr>
 					</tbody>
 				</table>
+				
 				<center>
 					<a href="email-attachment">Send Email With Attachments</a>
 				</center>
+				
 			</form>
 	
-	</div>
-	</center>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	</tbody>
-
-
-
-
-
-
-
-
-
-
 
 
 
