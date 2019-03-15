@@ -1,0 +1,303 @@
+
+
+
+/*-------Everything in here deals with the fixed bg image and scrolling text overlay----- */
+body {
+	
+  background-image: url("../img/backgroundPhotoLarge.jpg");
+  
+  background-position: center center;
+  
+  background-repeat: no-repeat;
+  
+  background-attachment: fixed;
+  
+  background-size: cover;
+  
+  /* This is the color that will display while the background picture is loading*/
+  background-color:#565454;
+
+}
+
+/* This switches to smaller picture to save time if the screen width is below 600px*/
+@media only screen and (max-width: 600px) {
+  
+ 	body {
+
+    background-image: url("../img/backgroundPhotoSmall.jpg");
+
+        }
+	}
+		
+		#contactPageHidden{
+		
+		display:none;
+		
+		}
+		
+		
+		
+
+/* -----------------------------Largest Screen Size-----------------------*/
+	
+html, body, .container {
+  height: 100%;
+}
+
+
+html, body, h1, p, a, div, section {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font: inherit;
+  font-weight: bold;
+}
+
+
+body { 
+  font: 18px/23px "Cantarell", sans-serif;
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+p {
+  margin: 0 0 15px 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+a {
+  display: inline-block;
+  border: 1px solid #fff;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 3px;
+  padding: 2px 15px;
+  text-decoration: none;
+  margin-top: 5px;
+  color: #ffffff;
+}
+
+.container {
+  display: table;
+  padding-top: 0px;
+  width: 100%;
+}
+
+.content {
+  margin-top: 100px;
+  margin-right: 40px;
+  display: table-cell;
+  vertical-align: center;
+  text-align: center;
+  float: right;
+}
+
+
+.mainButton {
+  display: inline-block;
+  padding: 6px 10px;
+  color: #ffffff;
+  border: 4px solid #ffffff;
+  border-radius: 3px;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  border-radius: 15px;
+
+}
+
+
+
+.audioButton {
+	
+  margin: 0;
+  padding: 0;
+
+  font: inherit;
+  font-weight: bold;
+	
+  display: inline-block;
+  padding: 0px 2px 0px 2px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  font-weight: 70;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  background-color: Transparent;
+  font-size: 15px;
+  float: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+#quote {
+	
+  font-size: 18px;
+  line-height: 23px;
+  padding-top: 0px;
+  padding-bottom:0px;
+  margin-top:10px;
+  margin-bottom:0px;
+  
+}
+
+#paragraph {
+	
+  padding-top: 0px;
+  padding-bottom:0px;
+  margin-top:0px;
+  margin-bottom:22px;
+  
+}
+
+
+
+/* -----------------------------Medium Screen Size-----------------------*/
+
+
+
+@media only screen and (max-width: 1000px) {
+
+
+/*This floats the content center if screen is small */
+.content {
+  margin-right: 20px;
+  display: table-cell;
+  vertical-align: center;
+  text-align: center;
+  float: none;
+}	
+	/* This shades the background if it's white text on white background*/
+	.bgVisShading {
+  background-color: rgba(0, 0, 0, 0.3);  
+
+	}
+	
+
+.content {
+  margin-right: 30px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  float: none;
+}
+
+
+	}
+	
+	/* -----------------------------Small Screen Size-----------------------*/
+
+@media only screen and (max-width: 340px) {
+  
+  .container {
+    position: relative;
+    display: block;
+    float: left;
+    vertical-align: baseline;
+    margin: 0 auto;
+    padding: 80px 0 0 0;
+  }
+  
+  body, h1 {
+    font-size: 18px;
+    font-weight:bold;
+    line-height: 23px;
+  } 
+  
+  .content {  
+    display: inline;
+    margin: 0 auto;
+    padding-top: 80px;
+    vertical-align: center;
+  }
+
+  .quote {
+    font-size: 14px;
+    line-height: 21px;
+    
+  }
+
+  .button, p {
+    max-width: 150px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 20px;
+    
+  }
+  .audioButton{
+  float: center;
+  }
+
+  html, body, .container {
+    height: auto;
+    
+  }
+  
+  .audioButton {
+	
+  margin: 10px 2px 0px 2px;
+  padding: 0;
+
+  font: inherit;
+  font-weight: bold;
+	
+  display: inline-block;
+  padding: 0px 2px 0px 2px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+  font-weight: 70;
+  line-height: normal;
+  text-decoration: none;
+  text-align: center;
+  background-color: Transparent;
+  font-size: 15px;
+
+}
+
+
+}
+
+/*-- this makes the contacts/home page fade in and out */
+
+
+.blur-out-expand-fwd {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: blur-out-expand-fwd;
+  animation-name: blur-out-expand-fwd;
+}
+
+.focus-in-contract-bck {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: focus-in-contract-bck;
+  animation-name: focus-in-contract-bck;
+}
+
+@-webkit-keyframes slide-out-fwd-center{0%{-webkit-transform:translateZ(1);transform:translateZ(1);opacity:1}100%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}}@keyframes slide-out-fwd-center{0%{-webkit-transform:translateZ(1);transform:translateZ(1);opacity:1}100%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}}
+@-webkit-keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
+@-webkit-keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(.01);filter:blur(.01)}100%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}@keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(.01);filter:blur(.01)}100%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}

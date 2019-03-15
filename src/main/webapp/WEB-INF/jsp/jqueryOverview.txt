@@ -1,0 +1,263 @@
+JQUERY OVERVIEW
+
+Basic jquery selectors work pretty much the same as css
+
+Basic selectors
+
+The $ sign is short for jquery, it means it's referencing jquery.
+$() is the same as writing jquery()
+
+$('p').css('border','4px solid red');
+The above would select all paragraph eleents and apply a red border
+
+$('p.lead').css('border','4px solid red');
+The above would select all paragraph elements and apply a red border
+
+$('p.lead').css('border','4px solid red');
+The above would select all paragraph elements and apply a red border
+this one does paragraphs with class of lead
+
+
+
+$('#lesson1').css('border','4px solid red');
+The above would select the element with id lesson1
+
+$('*').css('border','4px solid red');
+The above would select everything in the entire document
+
+$('.box:first').hide(500)
+The above would select the first box and fade it out over 500 ms
+
+$('.box:first').hide(500).show(800);
+I could hide it and then show it
+
+$('.box:first').hide(500).delay(300).show(800);
+I could hide it, delay, then show it
+
+$('.box:first').slideUp(500).slideDown(300)
+This would make it slide up the slide down
+
+basic animations
+
+$('.box:first').animate({height: '200px'}300);
+This would make adjust the height to 200 px over the course of 300 ms
+
+$('.box:first').animate({height: '200px', left: '2oopx'}300);
+We can put multiple changes inside
+
+index filters
+$('p.first').css('border','4px solid red');
+grab just the jurst p element
+
+$('p.last').css('border','4px solid red');
+grab the last p element
+
+$('p:gt(2)').css('border','4px solid red');
+The above would select all paragraph eleents above number 2
+
+$('p:gl(2)').css('border','4px solid red');
+The above would select all paragraph eleents less than 2
+
+$('p:eq(2)').css('border','4px solid red');
+The above would select the third p element since its zero indexed
+
+relationship filters
+$('h2:has(span)').css('border','4px solid red');
+This grabs the h2 elements that have a span element inside of them
+
+$('.box:parent').css('border','4px solid red');
+This grabs the box class elements that are parents, meaning
+they have atleast one child element
+
+
+
+attribute filters
+
+attributes are things that are inside of the tag, like class, source, etc
+
+$('p[class="lead"]').css('border','4px solid red');
+This grabs all the p elements that also have a class of lead
+
+$('p[name="lead"]').css('border','4px solid red');
+This grabs all the p elements that also have a class of lead
+
+$('p[name^="sho"]').css('border','4px solid red');
+This would find elements where the words sho are anywhere inside
+
+$(href$='.co.uk').css('border','4px solid red');
+This would grab all elements with ahref with .co.uk somewhere in it, all british websites.
+You could grab all pds if you wrote pdf...
+
+
+
+Attributes are the things inside the element, like classes, values, etc.
+Jquery can set attributes and also retrieve them
+
+alert($('p:first')attr('class'));
+this makes an alert window pop and tell us what the class is
+
+$('p:first').attr('class', 'not-lead');
+The above signes the not lead class to the first p element
+
+$('img').attr('src', 'img2.jpg');
+This  will change the image src to image2.jpg
+
+$('img').fadeOut(500, function(){
+$(this).attr('src' 'img2.jpg').fadein(500);
+
+});
+
+we could make it spend 500 ms fading out the img, then
+change the img src, then have it fade in the new image
+When we write "this" we're referring to whatever the function is called on in jquery
+
+
++++++++++++++++++class methods++++++++++++
+
+alert($('p:last').hasClass('lead'));
+
+We can ask if an element has a class
+In this case we are making an alert window that says true or false
+but we could use the outcome to  color code something.
+
+$('p').toggleClassaddClass('blue')removeClass('lead');
+This would do the obvious
+
+$('p')toggleClass(blue).hasClass('lead'));
+This would obviously toggle it, as to whether or not it has the class of blue, onto all the p elements, it would reverse them all in terms of blue.
+
+$('p:first').text('hey you guys!);
+This will change the actual text content itself.
+
+alert($('p:first').text());
+We can use jquery to retrieve text and do something with it, in addition to simply changing it.
+the text function does both, read or write
+
+The DOM is a universal api and interface that everyone uses to let the html communicate with the css and javascript, or other language.  It;s what actually
+connects the javascript to the html, after the javascript is written out, it's what actually does it.
+
+$('p:first').text('hey there <em>buddy</em>)
+The text tool does not recognize elements/tags though, if you wrote the above it would write the tags directly to the end user
+
+If we want to use tags/elements  then we have to use the html method.
+$('p:first').html('hey there <em>buddy</em>)
+The html method will recognize the element/tag
+
+alert($('input').val());
+This grabs the value out of the text field.  In the example he has a random number generator
+We can grab anything from the screen.
+
+.val will gather OR set the information.
+
+DOM TRAVERSAL
+
+$('h2').children().css('border', '4px solid red');
+This would grab all the children of h2 elements
+
+$('h2').parent().css('border', '4px solid red');
+The above would grab all parents of the h2, going out all the way up to the html document
+
+$('h2').parent('section').css('border', '4px solid red');
+But we could apply an outer limit like this, here it would go up until section
+
+$('h2').siblings().css('border', '4px solid red');
+This would grab all the sibling elements of the h2
+
+$('h2').sibling('p').css('border', '4px solid red');
+This would narrow it down to all the siblings that are also a p element
+
+$('h2').sibling('p':first).css('border', '4px solid red');
+This would grab the first siblimg element thats a p, we could grab the last if we wanted, etc.
+
+$('h2').sibling('p':first).css('border', '4px solid red');
+This would grab the first sibling element thats a p, we could grab the last if we wanted, etc.
+
+We could do it inside the sibling element, like
+
+$('h2').sibling('p').first.css('border', '4px solid red');
+
+$('h2').parents('section').sibling().css('border', '4px solid red');
+
+$('h2').parents('section').siblings('header').css('border', '4px solid red');
+Here we are starting with the h2, heading out to a parent, then moving to a sibling
+which is the header element.  This is not doable in css.
+
+$('h2').parents('section').siblings('header').css('border', '4px solid red');
+
+
+$('h2').parents('section').siblings('header').children().css('border', '4px solid red');
+This would grab the children of that element.  We could keep chaining things on forever.
+He calls this "DOM Traversal".
+
+EVENT BINDING
+This is what's behind interactvity.
+Bind is the magic keyword.
+
+$('h2').bind('click', function(){
+ 
+ In here is were we put all the stuff to be done if someone clicks on the h2.
+
+}
+
+$('h2').bind('click', function(){
+ 
+ $(this).toggleClass('blue');
+ 
+
+}
+The above toggles the blue class, so it would
+trigger on and off whatever the blue class does, in this case
+make the text color blue.
+
+
+$('h2').click(function(){
+ 
+ In here is were we put all the stuff to be done if someone clicks on the/a h2.
+
+}
+
+The above also works.
+
+$('h2').hover(function(){
+ 
+ asfasfsafdsdf
+
+}
+This one is for hover
+
+$('html').keypress(function(){
+	
+	$(this).toggleClass('blue');
+	
+	});	
+	
+The above would be triggered if the user has focus on the browser and clicks any key
+
+This was the last lesson video, to further our understanding the teacher recommends looking at the
+actual documents, api.jquery.com and just doing it, building things, making things, projects with it, applying it.
+
+Image sliders, modals, menus.
+
+
+
+
+
+
+
+
+
+
+for some reason jquery appears to not work inside of this, it goes instantly.
+setTimeout(function(){
+		
+
+		
+	$('html').hide(10000);
+	
+	
+	
+	
+	
+	
+	
+	    }, 10);

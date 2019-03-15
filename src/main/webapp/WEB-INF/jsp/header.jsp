@@ -11,8 +11,12 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
+	
+	
 <c:url var="jquery" value="/js/jquery.min.js" />
 <script src="${jquery}"></script>
+
+
 <c:url var="jqueryValidate" value="/js/jquery.validate.min.js" />
 <script src="${jqueryValidate}"></script>
 

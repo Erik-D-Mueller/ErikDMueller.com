@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -webkit-linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -moz-linear-gradient(top, #c04848 6%, #480048 100%);
+  background: -o-linear-gradient(top, #c04848 6%, #480048 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Bree Serif', serif;
+  color: white;
+  font-weight: 100;
+}
+
+.wrapper {
+  margin-left: 5%;
+  margin-top: 5%;
+  h1 {
+    font-size: 50px;
+    margin-top: 0;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
+  span {
+    display: inline-block;
+    text-align: left;
+    font-size: 26px;
+  }
+  img {
+    width: 40px;
+    margin: 80px 10px 0px 10px;
+  }
+  a {
+    color: white;
+    margin: 20px;
+  }
+  i {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  .social {
+    position: relative;
+    margin-top: 50px;
+  }
+}
+
+span.cursor {
+  font-size: 35px;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    h1 {
+      font-size: 34px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    span {
+      font-size: 22px;
+    }
+    .social {
+      i {
+        font-size: 22px;
+      }
+      a {
+        margin: 5px;
+      }
+      text-align: center;
+    }
+  }
+}
+
+@keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes blink {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}

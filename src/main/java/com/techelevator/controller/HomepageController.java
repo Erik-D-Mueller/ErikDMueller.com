@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @SessionAttributes({"userName", "currentUser", "shoppingCart", "member", "confNum"})
 
-
 @Controller
 public class HomepageController {
 	
@@ -20,9 +19,25 @@ public class HomepageController {
 	
 	
 	@RequestMapping(path = { "/", "/homepage0" })
-	public String viewCC(HttpServletRequest request) {
+	public String viewCA(HttpServletRequest request) {
 				
 		return "homepage0";
 	}
 
+	
+	@RequestMapping(path = { "/resume" })
+	public String viewCB(HttpServletRequest request) {
+				
+		return "resume";
+	}
+
+
+	@RequestMapping(path = { "/contact" })
+	public String viewCC(HttpServletRequest request) {
+				
+		return "contact";
+	}
+	
+	
+	
 }

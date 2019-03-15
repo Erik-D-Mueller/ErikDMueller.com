@@ -1,13 +1,40 @@
-<!DOCTYPE html>
-<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<style>
+html { 
+  background: url('https://github.com/ErikUnique/ResumeWebsite/blob/master/MySite/Pictures/CasaBonita.jpg?raw=true') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.your-text {
+  font-family:arial;
+  color: #ffffff;
+  text-shadow: none;
+  display:none;
+}
+</style>
+
+
+<c:url var="cssHref" value="/css/resumestylefile.css" />
+<link rel="stylesheet" type="text/css" href="${cssHref}">
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
-<link rel="stylesheet" href="/css/resumestylefile.css">
-<script src="myscripts.js"></script>
 
+<c:url value="/js" var="jsHref" />
+<script src="${jsHref}/resumehomepage.js"></script>
+
+	<c:url var="homePageHref" value="/homepage" />
+	
 
 </head>
 
@@ -96,10 +123,15 @@
                     <li class="c7 c13"><span class="c5">Two login modes: &nbsp;Librarian or User, librarian has full functionality,
                             user can edit their personal info</span></li>
                     <li class="c7 c13"><span>Viewable on github at: &nbsp;</span><span class="c8"><a class="c20" href="https://www.google.com/url?q=https://github.com/ErikUnique/Tool-Lending-Library-Demo-App&amp;sa=D&amp;ust=1549937209949000">https://github.com/ErikUnique/Tool-Lending-Library-Demo-App</a></span></li>
+                
                 </ul>
                 <ul class="c3 lst-kix_list_7-0 start">
-                    <li class="c14 c13"><span>Viewable running on Heroku at: &nbsp;</span><span class="c8"><a class="c20" href="https://www.google.com/url?q=https://fast-temple-14445.herokuapp.com&amp;sa=D&amp;ust=1549937209950000">https://fast-temple-14445.herokuapp.com</a></span></li>
+                    <li class="c14 c13"><span class="c8"><a class="c20" href="${homePageHref}">VIEWABLE HERE</a></span></li>
                 </ul>
+            
+                <li class="c7 c13"><span>Use "Librarian", "Librarian" to log in and look around&nbsp;</span></li>
+                </ul>
+                
                 <p class="c14"><span class="c23 c10 c6">National Park Weather Website</span></p>
                 <ul class="c3 lst-kix_list_8-0">
                     <li class="c7 c13"><span class="c5">Spring MVC website with session for user preferences</span></li>
@@ -201,31 +233,10 @@
                     <li class="c7 c9"><span class="c5">Coordinated proper service with contract towing garages</span></li>
                     <li class="c7 c9"><span class="c5">Assuaged fears of the member and found alternate lodging/transport<br></span></li>
                 </ul>
-            
-            
-            
-            
-            
-            
-   
-
-
-
-
-
 
 </body>
-
-
-
-
-
 
 
 <!-- end of "your-text" div, which is the chunk of code that scrolls over the picture  -->
 
 </div>
-
-
-</body>
-</html>
