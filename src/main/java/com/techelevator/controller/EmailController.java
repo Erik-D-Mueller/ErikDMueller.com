@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -31,12 +33,15 @@ public class EmailController {
 	
 	
 	@PostMapping (value = "/sendEmail")
-	public String saveContacts(@RequestParam("name") String name, @RequestParam("email" String email,
+	public String saveContacts(@RequestParam("name") String name, @RequestParam("email") String email,
 			@RequestParam("subject") String subject, @RequestParam("message") String message)
 	{
 		// prints debug info
 		
-		
+		System.out.println("Name: " + name);
+		System.out.println("To: " + email);
+		System.out.println("Subject: " + subject);
+		System.out.println("Message: " + message);
 		
 		
 	}
