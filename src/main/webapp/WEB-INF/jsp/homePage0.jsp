@@ -36,117 +36,186 @@
 <body>
 
 	<div class="container bgVisShading">
-	
 
-	
 		<section class="content" id="homePage">
-		
-			<h1 id="name">Erik D Mueller</h1>
-
-			<div id="quote">
-				<p>
-					<strong>A picture is worth a thousand words</strong>
-				</p>
-			</div>
-
-			<div id="paragraph">
-				<p>
-					<strong> I'm a developer, a thinker and a <br /> problem
-						solver. We're all better</br> off if we work together, that's</br> the basis
-						for everything that I do.
-					</strong>
-				</p>
-			</div>
-			<p>
-				<a class="mainButton" href="#top" id="contactButton">CONTACT</a>
-			</p>
-			<p>
-				<a class="mainButton" href="${resume}"> RESUME </a>
-			</p>
-			<p>
-				<a class="mainButton" href="#top" id="portfolioButton">PORTFOLIO</a>
-			</p>
 
 
 
-<form action="https://formcarry.com/s/N6ytU2ZSS2R" method="POST" accept-charset="UTF-8" >
+			<form action="sendEmail" method="post">
+
+				<table class="table table-bordered" style="width: 60%;">
+
+					<thead>
+						<tr>
+							<thcolspan "2"><center>Simple MailSending Form</center></th>
+						
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Name:</td>
+							<td><input type="text" name="name" required=""
+								placeholder="Name" class="form-control"></td>
+						</tr>
+						
+						<tr>
+							<td>Recipient Email:</td>
+							<td><input type="text" name="email" required="" placeholder="Recipient Email" class="form-control"></td>
+							</tr>
+						<tr>
+							<td>Subject:</td>
+							<td><input type="text" name="subject" required="" placeholder="Subject" class="form-control"></td>
+						</tr>
+						<tr>
+							<td>Message
+						
+						
+						
+						
+						
+						
+						
+						
+							
+							
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					</tbody>
 
 
-<input type="email" name="email">   <!-- use this to reply visitors and prevent spam via akismet -->
-<input type="text" name="firstName">
-<input type="text" name="lastName">
-<input type="text" name="anotherInput">
-
-<input type="hidden" name="_gotcha">  <!-- use this to prevent spam -->
-<input type="submit" value="Submit">
-</form>
 
 
 
-<input type="text" name="name">
 
 
 
-			<p>
-				<button class="audioButton" onclick="bgmPlay()">PLAY</button>
 
-				<button class="audioButton" onclick="bgmPause()">PAUSE</button>
-			</p>
-			<audio id="bgm" autoplay>
-				<source src="http://tezhantezcan.com/bgm.mp3" type="audio/mpeg" />
-			</audio>
 
-		</section>
-		
 
-		
-		<section class="content" id="contactPageHidden">
-		
-			<h1>Erik D Mueller</h1>
 
-			<div id="quote">
-				<p>
-					<strong>contact</strong>
-				</p>
-			</div>
 
-			<div id="paragraph">
-				<p>
-					<strong> I'm a developer, a thinker and a <br /> problem
-						solver. We're all better</br> off if we work together, that's</br> the basis
-						for everything that I do.
-					</strong>
-				</p>
-			</div>
-			<p>
-				<a class="mainButton" id="contactButton">CONTACT</a>
-			</p>
-			<p>
-				<a class="mainButton" href="${resume}"> RESUME </a>
-			</p>
-			<p>
-				<a class="mainButton" href="#top" id="portfolioButton">PORTFOLIO</a>
-			</p>
 
-			<p>
-				<button class="audioButton" onclick="bgmPlay()">PLAY</button>
 
-				<button class="audioButton" onclick="bgmPause()">PAUSE</button>
-			</p>
-			
-			<audio id="bgm" autoplay>
-				<source src="http://tezhantezcan.com/bgm.mp3" type="audio/mpeg" />
-			</audio>
 
-		</section>
-		
 
-		<span class="homeFadeOut btn">Click me</span>
 
-		
-<div class='homeOpacity fade-in homeInvisible'>You look amazing!</div>
-		
-	</div>
+
+					<h1 id="name">Erik D Mueller</h1>
+
+					<div id="quote">
+						<p>
+							<strong>A picture is worth a thousand words</strong>
+						</p>
+					</div>
+
+					<div id="paragraph">
+						<p>
+							<strong> I'm a developer, a thinker and a <br />
+								problem solver. We're all better</br> off if we work together, that's</br>
+								the basis for everything that I do.
+							</strong>
+						</p>
+					</div>
+					<p>
+						<a class="mainButton" href="#top" id="contactButton">CONTACT</a>
+					</p>
+					<p>
+						<a class="mainButton" href="${resume}"> RESUME </a>
+					</p>
+					<p>
+						<a class="mainButton" href="#top" id="portfolioButton">PORTFOLIO</a>
+					</p>
+
+
+
+					<form action="https://formcarry.com/s/N6ytU2ZSS2R" method="POST"
+						accept-charset="UTF-8">
+
+
+						<input type="email" name="email">
+						<!-- use this to reply visitors and prevent spam via akismet -->
+						<input type="text" name="firstName"> <input type="text"
+							name="lastName"> <input type="text" name="anotherInput">
+
+						<input type="hidden" name="_gotcha">
+						<!-- use this to prevent spam -->
+						<input type="submit" value="Submit">
+					</form>
+
+
+
+					<input type="text" name="name">
+
+
+
+					<p>
+						<button class="audioButton" onclick="bgmPlay()">PLAY</button>
+
+						<button class="audioButton" onclick="bgmPause()">PAUSE</button>
+					</p>
+					<audio id="bgm" autoplay>
+						<source src="http://tezhantezcan.com/bgm.mp3" type="audio/mpeg" />
+					</audio>
+
+					</section>
+
+
+
+					<section class="content" id="contactPageHidden">
+
+						<h1>Erik D Mueller</h1>
+
+						<div id="quote">
+							<p>
+								<strong>contact</strong>
+							</p>
+						</div>
+
+						<div id="paragraph">
+							<p>
+								<strong> I'm a developer, a thinker and a <br />
+									problem solver. We're all better</br> off if we work together,
+									that's</br> the basis for everything that I do.
+								</strong>
+							</p>
+						</div>
+						<p>
+							<a class="mainButton" id="contactButton">CONTACT</a>
+						</p>
+						<p>
+							<a class="mainButton" href="${resume}"> RESUME </a>
+						</p>
+						<p>
+							<a class="mainButton" href="#top" id="portfolioButton">PORTFOLIO</a>
+						</p>
+
+						<p>
+							<button class="audioButton" onclick="bgmPlay()">PLAY</button>
+
+							<button class="audioButton" onclick="bgmPause()">PAUSE</button>
+						</p>
+
+						<audio id="bgm" autoplay>
+							<source src="http://tezhantezcan.com/bgm.mp3" type="audio/mpeg" />
+						</audio>
+
+					</section>
+
+
+					<span class="homeFadeOut btn">Click me</span>
+
+
+					<div class='homeOpacity fade-in homeInvisible'>You look
+						amazing!</div>
+
+					</div>
 </body>
 
 <script type="text/javascript">

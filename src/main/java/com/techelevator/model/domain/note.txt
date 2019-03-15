@@ -1,3 +1,9 @@
+A servlet is a small, server-resident program that typically runs automatically in response to user input.
+
+
+
+
+
 These are just classes to be instantiated to create objects.
 
 An object is an instantiated class.
