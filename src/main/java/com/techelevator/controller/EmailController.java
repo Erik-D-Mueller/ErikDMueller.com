@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
-
+import org.springframework.mail.javamail.MimeMessagePreparator;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSender;
 
 @Controller
 public class EmailController {
@@ -67,8 +69,9 @@ public class EmailController {
 	
 	{
 		final String name = request.getParameter("name");
-		final String emailTo = request.getParameter("mailTo");
+		final String email = request.getParameter("mailTo");
 		final String message = request.getParameter("message");
+		final String subject = request.getParameter("subject");
 		
 		//for multiple recipients
 		String [] to=emailTo.split(",");
@@ -95,25 +98,49 @@ public class EmailController {
 				
 				MimeMessageHelper messageHelper = new MimeMessageHelper(
 						mimeMessage, true, "UTF-8");
+				//for multiple recipients
+				
+				if(!to.equals(""))
+				{
+					for (String vto : to)
+					{
+						messageHelper.setTo(vto);
+					}
+				}
+				
+				//messageHelper.setTo(emailTo);
+				messageHelper.setSubject(subject);
+				messageHelper.setText(message);
+				
+				//determines if there is an upload file, attach it to the email
 				
 				
 				
 				
 				
-				
-				
-				
-				
+					
+					
+					if(!attachments.equals(""))
+					{
+						
+						for (CommonsMultipartFile file : attachments)
+						{
+							messageHelper.addAttachment(file.getOriginalFilename(), file);
+						}
+					}
+					System.out.println("sending done");
 				
 			}
-					
-		
-		
+			
+			
+		});
 	
 	
+	return "success";
 	
+	}
 	
+}
 	
 	
 
-}
