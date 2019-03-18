@@ -10,7 +10,7 @@
 <script src="${jquery}"></script>
 
 <c:url var="linkedInLogo" value="/img/linkedInLogo.png" />
-<c:url var="linkedInLogo" value="/img/linkedInLogo.png" />
+<c:url var="gitHubLogo" value="/img/gitHubLogo.png" />
 
 <c:url var="cssHref" value="/css/homepage0.css" />
 <link rel="stylesheet" type="text/css" href="${cssHref}">
@@ -55,13 +55,13 @@
 				</p>
 			</div>
 			<p>
-				<a class="mainButton" href="#top" id="contactButton">CONTACT</a>
+				<a class="mainButton" id="contactButton">CONTACT</a>
 			</p>
 			<p>
 				<a class="mainButton" href="${resume}"> RESUME </a>
 			</p>
 			<p>
-				<a class="mainButton" href="#top" id="portfolioButton">PORTFOLIO</a>
+				<a class="mainButton"id="portfolioButton">PORTFOLIO</a>
 			</p>
 
 	<p>
@@ -77,46 +77,49 @@
 
 	<section class="content" id="contactPage">
 	
-	
-	
-	<img src="/img/gitHubLogo.png" alt="GitHub">
+		<a target="_blank" href="https://github.com/ErikUnique"><img class="linkPics" src="${gitHubLogo}" alt="GitHub Link"></a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://www.linkedin.com/in/erik-d-mueller-b190a3ab/"><img class="linkPics" src="${linkedInLogo}" alt="LinkedIn Link"></a>
 
 		<div id="quote">
 			
 		</div>
 
 		<div id="paragraph">
+		
+		<div id="emailDiv">
 					<form action="sendEmail" method="post">
 
-	<p><strong> Full Name or Company:<br/>
+	<p><strong> <br/>Full Name or Company:<br/>
 		
-	<input type="text" name="name" required="a" placeholder="Name" class="form-control">
+	<input type="text" name="name" required="a" placeholder="" class="emailForm form-control">
 		
 	<br/>Return Email:<br/>
-	<input type="text" name="email" required="" placeholder="Recipient Email" class="form-control">
+	<input type="text" name="email" required="" placeholder="" class="emailForm form-control">
 				
 							<br/>Subject:<br/>
 							<input type="text" name="subject" required=""
-								placeholder="Subject" class="form-control">
+								placeholder="" class="emailForm form-control">
 				
-					<br/>	Message:<br/>
+				<br/>	Message:<br/>
 								
-				<textarea name="message" cols="50" rows="5" required=""
-									placeholder="Message.." class="form-control"></textarea>
-				
-
-					<input type="reset" value="Reset" class="btn btn-info">
-
-					<input type="submit" name="register" value="Submit"
-								class="btn btn-primary"><
+				<textarea name="message"   required=""
+									placeholder="" class="emailMessage form-control"></textarea>
+				<br/>
+				<p>
+				 <td><input type="submit" name="register" value="SendSendSend" class="btn btn-primary"></td>
+					<a class="mainButton" id="sendButton">SEND</a>
+							<p>
 								
 			</form>
+						
+			</div>
+			
+			<section id="emailSuccessDiv">
+			<h2>Success</h2>
+			</section>
 
 		</div>
-		<p>
-		<button type="submit" name onclick="bgmPlay()">SEND</button>
-
-	</p>
+		<br/>
 		<p>
 			<a class="mainButton" id="homeButton">HOME</a>
 		</p>
@@ -130,8 +133,6 @@
 // Contact/home fade in and out
  
 
-
-
 var bgm = document.getElementById("bgm");
 
 function bgmPlay() {
@@ -144,11 +145,36 @@ function bgmPause() {
 };
 
 
+$('#sendButton').click(function(){
+
+	
+	$('#emailDiv').addClass('slide-out-elliptic-top-bck');
+	
+	
+setTimeout(function(){
+        
+		$('#emailDiv').hide();
+		$('#contactPage').removeClass('slide-out-elliptic-top-bck');
+		$('#contactPage').removeClass('blur-out-expand-fwd');
+		$('#emailDiv').removeClass('slide-out-elliptic-top-bck');
+		$('#emailSuccessDiv').show();
+		$('#emailSuccessDiv').addClass('slide-in-elliptic-top-fwd');
+		
+	},500 );
+
+	
+});
+
+
+
 $('#contactButton').click(function(){
 	
-	
 	$('#homePage').addClass('blur-out-expand-fwd');
+	
+	
 	$('#homePage').removeClass('focus-in-contract-bck');
+	$('#contactPage').removeClass('blur-out-expand-fwd');
+	$('#contactPage').removeClass('focus-in-contract-bck');
 	
 	setTimeout(function(){
 		
@@ -166,24 +192,25 @@ $('#homeButton').click(function(){
 
 	
 	$('#contactPage').addClass('blur-out-expand-fwd');
+	
+	$('#contactPage').removeClass('focus-in-contract-bck');
+	$('#homePage').removeClass('blur-out-expand-fwd');
 	$('#contactPage').removeClass('focus-in-contract-bck');
 	
+	
 setTimeout(function(){
-		
+
+	$('#homePage').removeClass('blur-out-expand-fwd');
+	$('#emailDiv').show();
+	$('#emailSuccessDiv').hide();
+
 		$('#contactPage').hide();
-		$('#contactPage').removeClass('blur-out-expand-fwd');
 		$('#homePage').show();
 		$('#homePage').addClass('focus-in-contract-bck');
-
-		
 		
 	},500  );
 	
-	
-	
 });
-
-
 
 
 $('#portfolioButton').click(function(){
@@ -195,8 +222,6 @@ $('#portfolioButton').click(function(){
 
 });
 
-
 </script>
 
 </html>
-
