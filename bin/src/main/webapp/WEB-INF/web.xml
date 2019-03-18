@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <display-name>ErikDMueller.com</display-name>
-  
-  
-  
-  <!-- I added the init-parameters to make it work when sending an email out -->
-  
-  <!--  somehow the springmvc name is connected with the file springmvc-servlet.xml in the web-inf folder -->
-  <servlet>  
+  <display-name>Capstone Project</display-name>
+  <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/springmvc-servlet.xml</param-value>   
-    </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.css</url-pattern>
@@ -31,27 +18,6 @@
     <url-pattern>*.jpg</url-pattern>
     <url-pattern>*.gif</url-pattern>
   </servlet-mapping>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  <!--    <filter>
   	<filter-name>authFilter</filter-name>
