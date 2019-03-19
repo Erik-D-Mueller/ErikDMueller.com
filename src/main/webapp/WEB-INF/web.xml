@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
-  <display-name>Capstone Project</display-name>
+  <display-name>ErikDMueller.com</display-name>
   <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
@@ -19,7 +20,8 @@
     <url-pattern>*.gif</url-pattern>
   </servlet-mapping>
 
- <!--    <filter>
+<!--  
+  <filter>
   	<filter-name>authFilter</filter-name>
   	<filter-class>com.techelevator.security.AuthorizationFilter</filter-class>
   </filter>
@@ -38,7 +40,8 @@
   	<filter-name>csrfFilter</filter-name>
   	<url-pattern>/*</url-pattern>
   </filter-mapping>
- -->
+ --> 
+
  
   <session-config>
     <session-timeout>30</session-timeout>

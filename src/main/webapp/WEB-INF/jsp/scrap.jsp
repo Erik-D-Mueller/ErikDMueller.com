@@ -26,3 +26,39 @@
         }
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<form action="sendEmail" method="post">
+
+	<p><strong> <br/>Full Name or Company:<br/>
+		
+	<input type="text" name="name" required="a" placeholder="" class="emailForm form-control">
+		
+	<br/>Return Email:<br/>
+	<input type="text" name="email" required="" placeholder="" class="emailForm form-control">
+				
+							<br/>Subject:<br/>
+							<input type="text" name="subject" required=""
+								placeholder="" class="emailForm form-control">
+				
+				<br/>	Message:<br/>
+								
+				<textarea name="message"   required=""
+									placeholder="" class="emailMessage form-control"></textarea>
+				<br/>
+				<p>
+				 <td><input type="submit" name="register" value="SendSendSend" class="btn btn-primary"></td>
+					<a class="mainButton" id="sendButton">SEND</a>
+							<p>
+								
+			</form>
+						
+	

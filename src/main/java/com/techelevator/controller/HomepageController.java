@@ -52,7 +52,7 @@ public class HomepageController {
 	@RequestMapping(path = { "/resume" })
 	public String viewCB(HttpServletRequest request) {
 				
-		return "resume";
+		return "EDM_resume";
 	}
 
 

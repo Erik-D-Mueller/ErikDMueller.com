@@ -20,13 +20,26 @@ html {
   text-shadow: none;
   display:none;
 }
+
+
+
+
+
 </style>
 
 
-<c:url var="cssHref" value="/css/resumestylefile.css" />
-<link rel="stylesheet" type="text/css" href="${cssHref}">
+
+
+
+
+
+
+
+
 
 <head>
+<c:url var="cssHref" value="/css/resumestylefile.css" />
+<link rel="stylesheet" type="text/css" href="${cssHref}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
 

@@ -46,19 +46,17 @@
 		<property name="password" value="capstone_appuser1" />
 	
 	</bean>
-	
-    <!-- enable the configuration of transactional behavior based on annotations -->
+<!-- 
     <tx:annotation-driven transaction-manager="txManager"/>
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     
-	<!--  
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
         <property name="port" value="587" />
         <property name="username" value="erikdanielmueller@gmail.com" />
-        <property name="password" value="REDACTED" />
+        <property name="password" value="" />
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
@@ -67,9 +65,7 @@
             </props>
         </property>
     </bean>
-	
-	-->
-	
+  -->
 	<beans profile="heroku">
 		<bean class="java.net.URI" id="dbUrl">
 			<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>

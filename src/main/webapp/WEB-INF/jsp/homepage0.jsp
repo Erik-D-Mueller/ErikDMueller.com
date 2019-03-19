@@ -5,6 +5,9 @@
 
 <head>
 
+<c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf"/>
+<c:url var="webResume" value="resume"/>
+
 <c:url var="jquery"
 	value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" />
 <script src="${jquery}"></script>
@@ -35,7 +38,8 @@
 <body>
 
 	<div class="container bgVisShading">
-
+		
+		
 		<section class="content" id="homePage">
 
 			<h1 id="name">Erik D Mueller</h1>
@@ -58,7 +62,7 @@
 				<a class="mainButton" id="contactButton">CONTACT</a>
 			</p>
 			<p>
-				<a class="mainButton" href="${resume}"> RESUME </a>
+				<a class="mainButton" id="resumeButton"> RESUME </a>
 			</p>
 			<p>
 				<a class="mainButton"id="portfolioButton">PORTFOLIO</a>
@@ -74,6 +78,7 @@
 	</audio>
 	
 							</section>
+														
 
 	<section class="content" id="contactPage">
 	
@@ -87,44 +92,85 @@
 		<div id="paragraph">
 		
 		<div id="emailDiv">
-					<form action="sendEmail" method="post">
-
-	<p><strong> <br/>Full Name or Company:<br/>
 		
-	<input type="text" name="name" required="a" placeholder="" class="emailForm form-control">
-		
-	<br/>Return Email:<br/>
-	<input type="text" name="email" required="" placeholder="" class="emailForm form-control">
-				
-							<br/>Subject:<br/>
-							<input type="text" name="subject" required=""
-								placeholder="" class="emailForm form-control">
-				
-				<br/>	Message:<br/>
-								
-				<textarea name="message"   required=""
-									placeholder="" class="emailMessage form-control"></textarea>
-				<br/>
-				<p>
-				 <td><input type="submit" name="register" value="SendSendSend" class="btn btn-primary"></td>
-					<a class="mainButton" id="sendButton">SEND</a>
-							<p>
-								
-			</form>
-						
-			</div>
+				</div>
 			
 			<section id="emailSuccessDiv">
 			<h2>Success</h2>
 			</section>
 
 		</div>
-		<br/>
+		
+		<p>
+			<a class="mainButton" id="emailButton">EMAIL</a>
+		</p>
 		<p>
 			<a class="mainButton" id="homeButton">HOME</a>
 		</p>
 	
 	</section>
+
+
+
+
+
+<section class="content" id="resumePage">
+
+
+<p>
+	<a href="${webResume}" class="mainButton" id="webResumeButton">Online Resume</a>
+</p>
+
+<p>
+	<a href="${paperResume}" class="mainButton"  id="pdfResumeButton">Download PDF</a>
+</p>
+
+<p>
+	<a class="mainButton" id="resumeHomeButton">HOME</a>
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="content" id="portfolioPage" style="text-align:left;">
+
+<h1>portfolio</h1>
+<br/>
+<h5>Tool Lending Library Inventory Management Software</h5>
+
+
+<div class="copyP">
+
+<ul class="copyP">
+<li class="copyP">Java Spring MVC website with session for user preferences</li>
+<li>Uses 9 controllers, 4 DAOs, 11 classes and a 5 table postgresql database</li>
+<li>Uses bootstrap and is completely mobile responsive</li>
+<li>Made completely from scratch aside from Bootstrap and the SpringFramework</li>
+<li>Has CSRF filter</li>
+<li>Has Client side and Server side form validation on all form inputs</li>
+<li>Uses salted password hashing on the database></li>
+<li>Integrated Junit tests for all the DAOs</li>
+<li>Bash script and sql scripts to set up the database</li>
+<li>Uses a CDN for jquery and bootstrap</li>
+<li>Two login modes: Librarian or User, librarian has full functionality, <br/>user can edit their personal info</li>
+</ul>
+
+</div>
+
+
+<p>
+	<a class="mainButton" id="portfolioHomeButton">HOME</a>
+</p>
+
+
+</section>
+
+
+
 
 							</body>
 
@@ -144,6 +190,30 @@ function bgmPause() {
 	bgm.pause();
 };
 
+
+$('#emailButton').click(function(){
+	
+	alert("Send Email To:    ErikDanielMueller@gmail.com");
+	
+});
+
+
+$('#resumeButton').click(function(){
+	$('#resumePage').removeClass('focus-in-contract-bck');
+	
+	$('#homePage').addClass('blur-out-expand-fwd');
+	
+	
+	setTimeout(function(){
+		$('#homePage').removeClass('blur-out-expand-fwd');
+		$('#homePage').hide();
+		$('#homePage').removeClass('blur-out-expand-fwd');
+		$('#resumePage').show();
+		$('#resumePage').addClass('focus-in-contract-bck');
+	
+	},500  );
+	
+});
 
 $('#sendButton').click(function(){
 
@@ -170,8 +240,6 @@ setTimeout(function(){
 $('#contactButton').click(function(){
 	
 	$('#homePage').addClass('blur-out-expand-fwd');
-	
-	
 	$('#homePage').removeClass('focus-in-contract-bck');
 	$('#contactPage').removeClass('blur-out-expand-fwd');
 	$('#contactPage').removeClass('focus-in-contract-bck');
@@ -179,7 +247,6 @@ $('#contactButton').click(function(){
 	setTimeout(function(){
 		
 		$('#homePage').hide();
-		$('#homePage').removeClass('blur-out-expand-fwd');
 		$('#contactPage').show();
 		$('#contactPage').addClass('focus-in-contract-bck');
 	
@@ -196,6 +263,7 @@ $('#homeButton').click(function(){
 	$('#contactPage').removeClass('focus-in-contract-bck');
 	$('#homePage').removeClass('blur-out-expand-fwd');
 	$('#contactPage').removeClass('focus-in-contract-bck');
+	$('#homePage').removeClass('focus-in-contract-bck');
 	
 	
 setTimeout(function(){
@@ -213,13 +281,66 @@ setTimeout(function(){
 });
 
 
-$('#portfolioButton').click(function(){
+$('#resumeHomeButton').click(function(){
 
+	
+	$('#resumePage').addClass('blur-out-expand-fwd');
+	
+	$('#resumePage').removeClass('focus-in-contract-bck');
+	$('#homePage').removeClass('blur-out-expand-fwd');
+	$('#contactPage').removeClass('focus-in-contract-bck');
 	$('#homePage').removeClass('blur-out-expand-fwd');
 	
-	$('#homePage').addClass('focus-in-contract-bck');
+setTimeout(function(){
+		
+		$('#homePage').removeClass('blur-out-expand-fwd');
+	    $('#resumePage').removeClass('blur-out-expand-fwd');
+		$('#resumePage').hide();
+		$('#homePage').show();
+		$('#homePage').addClass('focus-in-contract-bck');
+		
+	},500  );
+	
+});
 
 
+$('#portfolioButton').click(function(){
+	
+	$('#homePage').addClass('blur-out-expand-fwd');
+	$('#homePage').removeClass('focus-in-contract-bck');
+	$('#portfolioPage').removeClass('blur-out-expand-fwd');
+	$('#portfolioPage').removeClass('focus-in-contract-bck');
+	
+	setTimeout(function(){
+		$('.container').css("background-color", "rgba(0, 0, 0, 0.3)");
+		$('#homePage').hide();
+		$('#portfolioPage').show();
+		$('#portfolioPage').addClass('focus-in-contract-bck');
+	
+	},500  );
+	
+});
+
+$('#portfolioHomeButton').click(function(){
+
+	
+	$('#portfolioPage').addClass('blur-out-expand-fwd');
+	$('#portfolioPage').removeClass('focus-in-contract-bck');
+	$('#homePage').removeClass('blur-out-expand-fwd');
+	$('#portfolioPage').removeClass('focus-in-contract-bck');
+	$('#homePage').removeClass('blur-out-expand-fwd');
+	
+setTimeout(function(){
+		
+		$('#homePage').removeClass('blur-out-expand-fwd');
+	    $('#portfolioPage').removeClass('blur-out-expand-fwd');
+		$('#portfolioPage').hide();
+		$('.container').css("background-color", "rgba(0, 0, 0, 0)");
+		$('#homePage').show();
+		$('#homePage').addClass('focus-in-contract-bck');
+		
+	},500  );
+	
 });
 
 </script>

@@ -16,10 +16,23 @@ body {
 	}
 }
 
+
+.container{
+	
+background-color: rgba(0, 0, 0, 0.3);
+
+}
+
 #contactPage {
 	display: none;
 }
 #emailSuccessDiv {
+	display: none;
+}
+#resumePage{
+	display: none;
+}
+#homePage{	
 	display: none;
 }
 
@@ -70,6 +83,22 @@ html, body, h1, p, a, div, section {
 	font: inherit;
 	font-weight: bold;
 }
+
+
+.copyP {
+	margin: 0;
+	padding: 100;
+	font-size: 5px;
+	font: inherit;
+	font-weight: bold;
+	
+}
+
+
+
+
+
+
 
 body {
 	font: 18px/23px "Cantarell", sans-serif;
