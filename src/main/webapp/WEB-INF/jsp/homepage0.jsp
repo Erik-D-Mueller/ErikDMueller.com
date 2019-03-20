@@ -37,7 +37,7 @@
 
 <body>
 
-	<div class="container bgVisShading">
+	<div class="container">
 		
 		
 		<section class="content" id="homePage">
@@ -312,7 +312,10 @@ $('#portfolioButton').click(function(){
 	$('#portfolioPage').removeClass('focus-in-contract-bck');
 	
 	setTimeout(function(){
+		
+		// using .css() in jquery writes it directly to the element in the html file which thus overrides the attached style sheet
 		$('.container').css("background-color", "rgba(0, 0, 0, 0.3)");
+		
 		$('#homePage').hide();
 		$('#portfolioPage').show();
 		$('#portfolioPage').addClass('focus-in-contract-bck');
@@ -335,7 +338,9 @@ setTimeout(function(){
 		$('#homePage').removeClass('blur-out-expand-fwd');
 	    $('#portfolioPage').removeClass('blur-out-expand-fwd');
 		$('#portfolioPage').hide();
-		$('.container').css("background-color", "rgba(0, 0, 0, 0)");
+		
+//  This removes the html hardcoded in-element attribute, so that control reverts back to the CSS file which uses @media to decide
+		$('.container').removeAttr("style");
 		$('#homePage').show();
 		$('#homePage').addClass('focus-in-contract-bck');
 		
