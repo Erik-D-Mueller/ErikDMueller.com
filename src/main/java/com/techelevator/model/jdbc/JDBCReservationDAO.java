@@ -72,10 +72,10 @@ public class JDBCReservationDAO implements ReservationDAO {
 		
 		Reservation theReservation = new Reservation();
 
-		String sqlSearchReservationById = "SELECT r.reservation_id, t.tool_id, tt.tool_name, r.to_date, r.from_date "
-				+ "FROM reservation r " + "JOIN tool_reservation tr ON r.reservation_id = tr.reservation_id "
-				+ "JOIN app_user au ON r.app_user_id = au.app_user_id " + "JOIN tool t ON t.tool_id = tr.tool_id "
-				+ " JOIN tool_type tt ON t.tool_type_id = tt.tool_type_id " + "WHERE r.reservation_id = ?";
+		String sqlSearchReservationById = "SELECT reservation_id, tool_id, tool_name, to_date, from_date "
+				+ "FROM reservation" + "JOIN tool_reservation ON reservation_id = reservation_id "
+				+ "JOIN app_user ON app_user_id = app_user_id " + "JOIN tool ON tool_id = tool_id "
+				+ " JOIN tool_type ON tool_type_id = tool_type_id " + "WHERE reservation_id = ?";
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchReservationById, reservationId);
 
