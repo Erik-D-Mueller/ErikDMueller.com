@@ -41,17 +41,19 @@
     	 to connect to a database -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.postgresql.Driver" />
-		<property name="url" value="jdbc:postgresql://localhost:5432/capstone" />
-		<property name="username" value="capstone_appuser" />
-		<property name="password" value="capstone_appuser1" />
+		<property name="url" value="jdbc:postgresql://172.93.133.120:5432/erikdmue_capstone" />
+		<property name="username" value="erikdmue_capstone_appuser" />
+		<property name="password" value="jtTLumBq9qku" />
 	
 	</bean>
-<!-- 
+
     <tx:annotation-driven transaction-manager="txManager"/>
+    
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
     
+    <!-- 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
         <property name="port" value="587" />
@@ -66,6 +68,8 @@
         </property>
     </bean>
   -->
+  
+  <!-- 
 	<beans profile="heroku">
 		<bean class="java.net.URI" id="dbUrl">
 			<constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
@@ -75,5 +79,6 @@
 			<property name="username" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
 			<property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
 		</bean>	
-	</beans>
-</beans>
+		
+		 -->
+		 </beans>
