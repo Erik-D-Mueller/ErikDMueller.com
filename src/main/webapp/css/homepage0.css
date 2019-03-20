@@ -17,6 +17,9 @@ body {
 }
 
 
+
+/* Everything start out hidden except for homePage */
+
 #contactPage {
 	display: none;
 }
@@ -32,7 +35,6 @@ body {
 
 
 /* adding/removing the class is best because that way I can make changes with jquery, wihtout permanently overriding the css sheet, since .css goes onto the DOM and overrides the style sheet */
-
 
 
 /* -----------------------------Largest Screen Size-----------------------*/
@@ -137,7 +139,7 @@ a {
 	margin-top: 100px;
 	margin-right: 40px;
 	display: table-cell;
-	vertical-align: center;
+	vertical-align: middle;
 	text-align: center;
 	float: right;
 }
@@ -194,10 +196,11 @@ a {
 /* -----------------------------Medium Screen Size-----------------------*/
 @media only screen and (max-width: 1000px) {
 	/*This floats the content center if screen is small */
-	.content {
-		margin-right: 20px;
+		.content {
+	    margin-top: auto;
+		margin-right: 30px;
 		display: table-cell;
-		vertical-align: center;
+		vertical-align: middle;
 		text-align: center;
 		float: none;
 	}
@@ -205,13 +208,7 @@ a {
 	.container {
 		background-color: rgba(0, 0, 0, 0.3);
 	}
-	.content {
-		margin-right: 30px;
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		float: none;
-	}
+	
 }
 
 /* -----------------------------Small Screen Size-----------------------*/

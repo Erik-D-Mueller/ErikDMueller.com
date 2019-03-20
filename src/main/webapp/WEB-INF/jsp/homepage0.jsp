@@ -8,6 +8,10 @@
 <c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf"/>
 <c:url var="webResume" value="resume"/>
 
+<c:url var="toolSoftwareHome" value="/homepage"/>
+
+<c:url var="webResume" value="resume"/>
+
 <c:url var="jquery"
 	value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" />
 <script src="${jquery}"></script>
@@ -160,7 +164,9 @@
 </ul>
 
 </div>
-
+<p>
+<a class="mainButton" href="${toolSoftwareHome}">Enter tool Lending Library</a>
+</p>
 
 <p>
 	<a class="mainButton" id="portfolioHomeButton">HOME</a>
