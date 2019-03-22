@@ -28,7 +28,7 @@ public class JDBCToolDAO implements ToolDAO {
 		
 		Tool newTool = new CheckedOutTool();
 		
-		String sqlGetToolById = "SELECT * FROM tool JOIN tool_type ON tool_type_id = tool_type_id WHERE tool_id = ?";
+		String sqlGetToolById = "SELECT * FROM tool t JOIN tool_type tt ON t.tool_type_id = tt.tool_type_id WHERE t.tool_id = ?";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetToolById, toolId);
 		
@@ -54,11 +54,11 @@ public class JDBCToolDAO implements ToolDAO {
 
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description "
-				+ "FROM tool JOIN tool_type ON tool_type_id = tool_type_id " + "WHERE tool_id NOT IN "
-				+ "(SELECT tool_id " + "FROM tool JOIN tool_reservation ON tool_id = tool_id "
-				+ "JOIN reservation ON reservation_id = reservation_id "
-				+ "WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date))";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description "
+				+ "FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id " + "WHERE t.tool_id NOT IN "
+				+ "(SELECT t.tool_id " + "FROM tool t JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+				+ "JOIN reservation r ON r.reservation_id = tr.reservation_id "
+				+ "WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date))";
 
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString());
 
@@ -76,13 +76,13 @@ public class JDBCToolDAO implements ToolDAO {
 
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description, to_date, user_name, from_date, to_date  "
-								+"FROM tool JOIN tool_type ON tool_type_id = tool_type_id "
-								+"LEFT JOIN tool_reservation ON tool_id = tool_id "
-								+"LEFT JOIN reservation ON reservation_id = reservation_id "
-								+"LEFT JOIN app_user ON app_user_id = app_user_id "
-								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date) "
-								+"ORDER BY tool_id";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description, r.to_date, au.user_name, r.from_date, r.to_date  "
+								+"FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id "
+								+"LEFT JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+								+"LEFT JOIN reservation r ON r.reservation_id = tr.reservation_id "
+								+"LEFT JOIN app_user au ON r.app_user_id = au.app_user_id "
+								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date) "
+								+"ORDER BY t.tool_id";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString());
 
@@ -102,12 +102,12 @@ public class JDBCToolDAO implements ToolDAO {
 		CheckedOutTool theTool = new CheckedOutTool();
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description, reservation_id, user_name, from_date, to_date "
-								+"FROM tool JOIN tool_type ON tool_type_id = tool_type_id "
-								+"LEFT JOIN tool_reservation ON tool_id = tool_id "
-								+"LEFT JOIN reservation ON reservation_id = reservation_id "
-								+"LEFT JOIN app_user ON app_user_id = app_user_id "
-								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date) AND tool_id = ?";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description, r.reservation_id, au.user_name, r.from_date, r.to_date "
+								+"FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id "
+								+"LEFT JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+								+"LEFT JOIN reservation r ON r.reservation_id = tr.reservation_id "
+								+"LEFT JOIN app_user au ON r.app_user_id = au.app_user_id "
+								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date) AND t.tool_id = ?";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString(), toolId);
 
@@ -126,12 +126,12 @@ public class JDBCToolDAO implements ToolDAO {
 
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description, reservation_id, user_name, from_date, to_date "
-								+"FROM tool JOIN tool_type ON tool_type_id = tool_type_id "
-								+"LEFT JOIN tool_reservation ON tool_id = tool_id "
-								+"LEFT JOIN reservation ON reservation_id = reservation_id "
-								+"LEFT JOIN app_user ON app_user_id = app_user_id "
-								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date) AND user_name = ?";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description, r.reservation_id, au.user_name, r.from_date, r.to_date "
+								+"FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id "
+								+"LEFT JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+								+"LEFT JOIN reservation r ON r.reservation_id = tr.reservation_id "
+								+"LEFT JOIN app_user au ON r.app_user_id = au.app_user_id "
+								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date) AND au.user_name = ?";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString(), memberName.toUpperCase());
 
@@ -151,12 +151,12 @@ public class JDBCToolDAO implements ToolDAO {
 
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description, reservation_id, user_name, from_date, to_date "
-								+"FROM tool JOIN tool_type ON tool_type_id = tool_type_id "
-								+"LEFT JOIN tool_reservation ON tool_id = tool_id "
-								+"LEFT JOIN reservation ON reservation_id = reservation_id "
-								+"LEFT JOIN app_user ON app_user_id = app_user_id "
-								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date) AND drivers_license = ?";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description, r.reservation_id, au.user_name, r.from_date, r.to_date "
+								+"FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id "
+								+"LEFT JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+								+"LEFT JOIN reservation r ON r.reservation_id = tr.reservation_id "
+								+"LEFT JOIN app_user au ON r.app_user_id = au.app_user_id "
+								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date) AND au.drivers_license = ?";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString(), driversLicense);
 
@@ -177,12 +177,12 @@ public class JDBCToolDAO implements ToolDAO {
 
 		LocalDate date = LocalDate.now();
 
-		String sqlListAllTools = "SELECT tool_id, tool_name, tool_description, user_name, from_date, to_date "
-								+"FROM tool JOIN tool_type ON tool_type_id = tool_type_id "
-								+"LEFT JOIN tool_reservation ON tool_id = tool_id "
-								+"LEFT JOIN reservation ON reservation_id = reservation_id "
-								+"LEFT JOIN app_user ON app_user_id = app_user_id "
-								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= to_date AND (to_date(?, 'YYYY/MM/DD')) >= from_date) AND reservation_id = ?";
+		String sqlListAllTools = "SELECT t.tool_id, tt.tool_name, tt.tool_description, au.user_name, r.from_date, r.to_date "
+								+"FROM tool t JOIN tool_type tt ON tt.tool_type_id = t.tool_type_id "
+								+"LEFT JOIN tool_reservation tr ON t.tool_id = tr.tool_id "
+								+"LEFT JOIN reservation r ON r.reservation_id = tr.reservation_id "
+								+"LEFT JOIN app_user au ON r.app_user_id = au.app_user_id "
+								+"WHERE ((to_date(?, 'YYYY/MM/DD')) <= r.to_date AND (to_date(?, 'YYYY/MM/DD')) >= r.from_date) AND r.reservation_id = ?";
 				
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlListAllTools, date.toString(), date.toString(), reservationId);
 
@@ -236,3 +236,4 @@ public class JDBCToolDAO implements ToolDAO {
 	}
 
 }
+

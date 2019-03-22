@@ -42,8 +42,8 @@
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://172.93.133.120:5432/erikdmue_capstone" />
-		<property name="username" value="erikdmue_postgres" />
-		<property name="password" value="YA5rS)8dGNFU" />
+		<property name="username" value="erikdmue_capstone_appuser" />
+		<property name="password" value="jtTLumBq9qku" />
 	
 	</bean>
 
@@ -81,5 +81,4 @@
 		</bean>	
 		
 		 -->
-	
-</beans>
+	</beans>

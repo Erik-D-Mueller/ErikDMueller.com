@@ -8,6 +8,8 @@
 <c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf"/>
 <c:url var="webResume" value="resume"/>
 
+<c:url var="homeAudioClip" value="/media/homeAudioClip.m4a"/>
+
 <c:url var="toolSoftwareHome" value="/homepage"/>
 
 <c:url var="webResume" value="resume"/>
@@ -71,19 +73,21 @@
 			<p>
 				<a class="mainButton"id="portfolioButton">PORTFOLIO</a>
 			</p>
-
-	<p>
+<p>
 		<button class="audioButton" onclick="bgmPlay()">PLAY</button>
 
 		<button class="audioButton" onclick="bgmPause()">PAUSE</button>
 	</p>
-	<audio id="bgm" autoplay>
-		<source src="http://tezhantezcan.com/bgm.mp3" type="audio/mpeg" />
+	
+
+	<audio id="bgm">
+	
+
+		<source src="https://raw.githubusercontent.com/ErikUnique/ResumeWebsite/master/HomeAudioClip%20(online-audio-converter.com).mp3" type="audio/mpeg" />
 	</audio>
 	
 							</section>
 														
-
 	<section class="content" id="contactPage">
 	
 		<a target="_blank" href="https://github.com/ErikUnique"><img class="linkPics" src="${gitHubLogo}" alt="GitHub Link"></a>
@@ -113,6 +117,11 @@
 		</p>
 	
 	</section>
+
+
+
+
+
 
 
 
@@ -165,7 +174,7 @@
 
 </div>
 <p>
-<a class="mainButton" href="${toolSoftwareHome}">Enter tool Lending Library</a>
+<a target="_blank" class="mainButton" href="${toolSoftwareHome}">Enter tool Lending Library</a>
 </p>
 
 <p>

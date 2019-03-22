@@ -50,7 +50,7 @@ public class UserController {
 		}
 
 		userDAO.saveUser(registration.getUserName(), registration.getPassword(), registration.getDriversLicense(), registration.getRole());
-		return "redirect:/";
+		return "redirect:/homepage";
 	}
 	
 	@RequestMapping(path = "/userProfile", method = RequestMethod.GET)

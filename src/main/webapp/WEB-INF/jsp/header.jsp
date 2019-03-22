@@ -55,7 +55,7 @@
 			</div>
 		</div>
 	</div>
-	<c:url var="homePageHref" value="/" />
+	<c:url var="homePageHref" value="/homepage" />
 	<c:url var="toolSearchHref" value="/toolHistory" />
 	<c:url var="toolMasterHref" value="/completeToolList" />
 	<c:url var="availableToolHref" value="/availableToolList" />

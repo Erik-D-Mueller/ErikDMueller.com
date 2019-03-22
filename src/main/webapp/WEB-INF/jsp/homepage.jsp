@@ -55,7 +55,6 @@
 <p>Founded in the Summer of 2018 with the mission to provide tools to the needy and also to pass our class, we have been providing exceptional customer service for 2 weeks!</p>
 </div>
 
-<h5>EXIT BACK TO ERIK MUELLER'S HOMEPAGE</h5>
 
 </div>
 

@@ -53,7 +53,7 @@ public class AuthenticationController {
 			if (destination != null && !destination.isEmpty()) {
 				return "redirect:" + destination;
 			} else {
-				return "redirect:/";
+				return "redirect:/homepage";
 			}
 		} else {
 			attr.addFlashAttribute("loginFail", true);
@@ -67,7 +67,7 @@ public class AuthenticationController {
 		model.remove("currentUser");
 		model.clear();
 		session.invalidate();
-		return "redirect:/";
+		return "redirect:/homepage";
 
 	}
 }

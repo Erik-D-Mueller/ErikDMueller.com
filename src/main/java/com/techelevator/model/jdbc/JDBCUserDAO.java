@@ -38,8 +38,8 @@ public class JDBCUserDAO implements UserDAO {
 		
 		// These are the sample login usernames that I give out, so I don't let the passwords be changed
 		
-		updatePassword("BELLA", "BELLA"); //LIBRARIAN
-		updatePassword("KYLE", "KYLE");   //MEMBER
+		// updatePassword("BELLA", "BELLA"); //LIBRARIAN
+		// updatePassword("KYLE", "KYLE");   //MEMBER
 		
 		String sqlSearchForUser = "SELECT * " + "FROM app_user " + "WHERE UPPER(user_name) = ? ";
 
@@ -58,13 +58,13 @@ public class JDBCUserDAO implements UserDAO {
 	public void updatePassword(String userName, String password) {
 		byte[] salt = hashMaster.generateRandomSalt();
 		
-		
-		
-		
 		String hashedPassword = hashMaster.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		
+		// I don't let the password for bella or kyle be changed because they are the example logins given out
+		if(!(userName.contains("Bella")||userName.contains("Kyle"))){
 		jdbcTemplate.update("UPDATE app_user SET password = ?, salt = ? WHERE user_name = ?", hashedPassword, saltString, userName.toUpperCase());
+		}
 	}
 	
 	@Override

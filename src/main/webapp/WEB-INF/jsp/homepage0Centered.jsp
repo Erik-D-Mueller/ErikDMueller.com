@@ -7,7 +7,8 @@
 <c:url var="cssHref" value="/css/homepage0.css" />
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 
-  <link rel="icon" href="http://sixrevisions.com/favicon.ico" type="image/x-icon" />
+   <!--  <link rel="icon" href="http://sixrevisions.com/favicon.ico" type="image/x-icon" />   -->
+   
   <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
 
 
