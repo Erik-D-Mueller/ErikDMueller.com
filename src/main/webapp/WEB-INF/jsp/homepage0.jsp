@@ -4,6 +4,8 @@
 <html lang="en">
 <meta charset="utf-8" content="IE=edge,chrome=1"
 	http-equiv="X-UA-Compatible">
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <head>
 
 <c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf" />
