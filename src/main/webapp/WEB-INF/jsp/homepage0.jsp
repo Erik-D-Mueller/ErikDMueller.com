@@ -5,14 +5,13 @@
 
 <head>
 
-<c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf"/>
-<c:url var="webResume" value="resume"/>
+<c:url var="paperResume"
+	value="/download/pdf/ErikDMueller_Paper_Resume.pdf" />
+<c:url var="webResume" value="resume" />
 
-<c:url var="homeAudioClip" value="/media/homeAudioClip.m4a"/>
+<c:url var="toolSoftwareHome" value="/homepage" />
 
-<c:url var="toolSoftwareHome" value="/homepage"/>
-
-<c:url var="webResume" value="resume"/>
+<c:url var="webResume" value="resume" />
 
 <c:url var="jquery"
 	value="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" />
@@ -44,325 +43,208 @@
 <body>
 
 	<div class="container">
-		
-		
-		<section class="content" id="homePage">
 
-			<h1 id="name">Erik D Mueller</h1>
+		<section class="content">
+			<div id="homePage">
 
-			<div id="quote">
+				<h1 id="name">Erik D Mueller</h1>
+
+				<div id="quote">
+					<p>
+						<strong>A picture is worth a thousand words</strong>
+					</p>
+				</div>
+
+				<div id="paragraph">
+					<p>
+						<strong> I'm a developer, a thinker and a <br /> problem
+							solver. We're all better <br /> off if we work together, that's<br />
+							the basis for everything that I do.
+						</strong>
+					</p>
+				</div>
 				<p>
-					<strong>A picture is worth a thousand words</strong>
+					<a class="mainButton navButton" oldDiv="homePage"
+						newDiv="contactPage">CONTACT</a>
 				</p>
+				<p>
+					<a class="mainButton navButton" oldDiv="homePage"
+						newDiv="resumePage"> RESUME </a>
+				</p>
+				<p>
+					<a class="mainButton navButton" oldDiv="homePage"
+						newDiv="portfolioPage">PORTFOLIO</a>
+				</p>
+				<p>
+					<button class="audioButton" onclick="bgmPlay()">PLAY</button>
+
+					<button class="audioButton" onclick="bgmPause()">PAUSE</button>
+				</p>
+
+				<audio id="bgm" autoplay>
+
+					<source
+						src="https://raw.githubusercontent.com/ErikUnique/ResumeWebsite/master/HomeAudioClip%20(online-audio-converter.com).mp3"
+						type="audio/mpeg" />
+				</audio>
 			</div>
+	
+
+	
+		<div id="contactPage">
+
+			<a target="_blank" href="https://github.com/ErikUnique"><img
+				class="linkPics" src="${gitHubLogo}" alt="GitHub Link"></a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank"
+				href="https://www.linkedin.com/in/erik-d-mueller-b190a3ab/"><img
+				class="linkPics" src="${linkedInLogo}" alt="LinkedIn Link"></a>
+
+			<div id="quote"></div>
 
 			<div id="paragraph">
-				<p>
-					<strong> I'm a developer, a thinker and a <br /> problem
-						solver. We're all better <br/> off if we work together, that's<br/> the
-						basis for everything that I do.
-					</strong>
-				</p>
+
+				<div id="emailDiv"></div>
+
+				<section id="emailSuccessDiv">
+					<h2>Success</h2>
+				</section>
+
+			</div>
+
+			<p>
+				<a class="mainButton" id="emailButton">EMAIL</a>
+			</p>
+			<p>
+				<a class="mainButton  navButton" oldDiv="contactPage"
+					newDiv="homePage">HOME</a>
+			</p>
+
+	</div>
+
+
+
+
+	<div id="resumePage">
+	
+			<h1>RESUME</h1>
+			<br />
+			<p>
+				<a href="${webResume}" class="mainButton" id="webResumeButton">ONLINE</a>
+			</p>
+
+			<p>
+				<a href="${paperResume}" class="mainButton" id="pdfResumeButton">DOWNLOAD</a>
+			</p>
+
+			<p>
+				<a class="mainButton  navButton" oldDiv="resumePage"
+					newDiv="homePage">HOME</a>
+			</p>
+
+
+		</div>
+		
+		
+		<div id="portfolioPage" style="text-align: left;">
+
+			<h1>portfolio</h1>
+			<br />
+			<h5>Tool Lending Library Inventory Management Software</h5>
+
+
+			<div class="copyP">
+
+				<ul class="copyP">
+					<li class="copyP">Java Spring MVC website with session for
+						user preferences</li>
+					<li>Uses 9 controllers, 4 DAOs, 11 classes and a 5 table
+						postgresql database</li>
+					<li>Uses bootstrap and is completely mobile responsive</li>
+					<li>Made completely from scratch aside from Bootstrap and the
+						SpringFramework</li>
+					<li>Has CSRF filter</li>
+					<li>Has Client side and Server side form validation on all
+						form inputs</li>
+					<li>Uses salted password hashing on the database></li>
+					<li>Integrated Junit tests for all the DAOs</li>
+					<li>Bash script and sql scripts to set up the database</li>
+					<li>Uses a CDN for jquery and bootstrap</li>
+					<li>Two login modes: Librarian or User, librarian has full
+						functionality, <br />user can edit their personal info
+					</li>
+				</ul>
+
 			</div>
 			<p>
-				<a class="mainButton" id="contactButton">CONTACT</a>
+				<a target="_blank" class="mainButton" href="${toolSoftwareHome}">Enter
+					tool Lending Library</a>
 			</p>
+
 			<p>
-				<a class="mainButton" id="resumeButton"> RESUME </a>
+				<a class="mainButton  navButton" oldDiv="portfolioPage"
+					newDiv="homePage">HOME</a>
 			</p>
-			<p>
-				<a class="mainButton"id="portfolioButton">PORTFOLIO</a>
-			</p>
-<p>
-		<button class="audioButton" onclick="bgmPlay()">PLAY</button>
-
-		<button class="audioButton" onclick="bgmPause()">PAUSE</button>
-	</p>
-	
-
-	<audio id="bgm">
-	
-
-		<source src="https://raw.githubusercontent.com/ErikUnique/ResumeWebsite/master/HomeAudioClip%20(online-audio-converter.com).mp3" type="audio/mpeg" />
-	</audio>
-	
-							</section>
-														
-	<section class="content" id="contactPage">
-	
-		<a target="_blank" href="https://github.com/ErikUnique"><img class="linkPics" src="${gitHubLogo}" alt="GitHub Link"></a>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="https://www.linkedin.com/in/erik-d-mueller-b190a3ab/"><img class="linkPics" src="${linkedInLogo}" alt="LinkedIn Link"></a>
-
-		<div id="quote">
-			
-		</div>
-
-		<div id="paragraph">
-		
-		<div id="emailDiv">
-		
-				</div>
-			
-			<section id="emailSuccessDiv">
-			<h2>Success</h2>
-			</section>
-
-		</div>
-		
-		<p>
-			<a class="mainButton" id="emailButton">EMAIL</a>
-		</p>
-		<p>
-			<a class="mainButton" id="homeButton">HOME</a>
-		</p>
-	
-	</section>
-
-
-
-
-
-
-
-
-
-
-<section class="content" id="resumePage">
-
-
-<p>
-	<a href="${webResume}" class="mainButton" id="webResumeButton">Online Resume</a>
-</p>
-
-<p>
-	<a href="${paperResume}" class="mainButton"  id="pdfResumeButton">Download PDF</a>
-</p>
-
-<p>
-	<a class="mainButton" id="resumeHomeButton">HOME</a>
-</p>
-
-
-</section>
-
-
-
-
-
-<section class="content" id="portfolioPage" style="text-align:left;">
-
-<h1>portfolio</h1>
-<br/>
-<h5>Tool Lending Library Inventory Management Software</h5>
-
-
-<div class="copyP">
-
-<ul class="copyP">
-<li class="copyP">Java Spring MVC website with session for user preferences</li>
-<li>Uses 9 controllers, 4 DAOs, 11 classes and a 5 table postgresql database</li>
-<li>Uses bootstrap and is completely mobile responsive</li>
-<li>Made completely from scratch aside from Bootstrap and the SpringFramework</li>
-<li>Has CSRF filter</li>
-<li>Has Client side and Server side form validation on all form inputs</li>
-<li>Uses salted password hashing on the database></li>
-<li>Integrated Junit tests for all the DAOs</li>
-<li>Bash script and sql scripts to set up the database</li>
-<li>Uses a CDN for jquery and bootstrap</li>
-<li>Two login modes: Librarian or User, librarian has full functionality, <br/>user can edit their personal info</li>
-</ul>
-
 </div>
-<p>
-<a target="_blank" class="mainButton" href="${toolSoftwareHome}">Enter tool Lending Library</a>
-</p>
 
-<p>
-	<a class="mainButton" id="portfolioHomeButton">HOME</a>
-</p>
-
-
-</section>
-
-
-
-
-							</body>
+		</section>
+</body>
 
 <script>
+	var bgm = document.getElementById("bgm");
 
-// Contact/home fade in and out
- 
+	function bgmPlay() {
+		bgm.play();
+		console.log("test");
+	};
 
-var bgm = document.getElementById("bgm");
+	function bgmPause() {
+		bgm.pause();
+	};
 
-function bgmPlay() {
-	bgm.play();
-	console.log("test");
-};
+	$('#emailButton')
+			.click(
+					function() {
 
-function bgmPause() {
-	bgm.pause();
-};
+						alert("You can email me at:\r\n\r\nErikDanielMueller@gmail.com\r\n\r\n I look forward to hearing from you!");
 
+					});
 
-$('#emailButton').click(function(){
-	
-	alert("Send Email To:    ErikDanielMueller@gmail.com");
-	
-});
+	// This is what dissolves out the old div and materializes the new div
+	$('.navButton').click(function() {
 
+		var oldDiv = "#" + $(this).attr("oldDiv");
+		var newDiv = "#" + $(this).attr("newDiv");
 
-$('#resumeButton').click(function(){
-	$('#resumePage').removeClass('focus-in-contract-bck');
-	
-	$('#homePage').addClass('blur-out-expand-fwd');
-	
-	
-	setTimeout(function(){
-		$('#homePage').removeClass('blur-out-expand-fwd');
-		$('#homePage').hide();
-		$('#homePage').removeClass('blur-out-expand-fwd');
-		$('#resumePage').show();
-		$('#resumePage').addClass('focus-in-contract-bck');
-	
-	},500  );
-	
-});
+		$(oldDiv).addClass('blur-out-expand-fwd');
 
-$('#sendButton').click(function(){
+		$(oldDiv).removeClass('focus-in-contract-bck');
+		$(newDiv).removeClass('blur-out-expand-fwd');
+		$(newDiv).removeClass('focus-in-contract-bck');
 
-	
-	$('#emailDiv').addClass('slide-out-elliptic-top-bck');
-	
-	
-setTimeout(function(){
-        
-		$('#emailDiv').hide();
-		$('#contactPage').removeClass('slide-out-elliptic-top-bck');
-		$('#contactPage').removeClass('blur-out-expand-fwd');
-		$('#emailDiv').removeClass('slide-out-elliptic-top-bck');
-		$('#emailSuccessDiv').show();
-		$('#emailSuccessDiv').addClass('slide-in-elliptic-top-fwd');
-		
-	},500 );
+		// It takes half  second to dissolve old div, before materialzing new div
+		setTimeout(function() {
 
-	
-});
+			// If we're going into the portfolio then darken the background, override style page
+			if (newDiv === "#portfolioPage") {
 
+				$('.container').css("background-color", "rgba(0, 0, 0, 0.3)");
 
+			}
 
-$('#contactButton').click(function(){
-	
-	$('#homePage').addClass('blur-out-expand-fwd');
-	$('#homePage').removeClass('focus-in-contract-bck');
-	$('#contactPage').removeClass('blur-out-expand-fwd');
-	$('#contactPage').removeClass('focus-in-contract-bck');
-	
-	setTimeout(function(){
-		
-		$('#homePage').hide();
-		$('#contactPage').show();
-		$('#contactPage').addClass('focus-in-contract-bck');
-	
-	},500  );
-	
-});
+			// If we're leaving the portfolio div then give control of the background back to style page
+			if (oldDiv === "#portfolioPage") {
 
+				$('.container').removeAttr("style");
 
-$('#homeButton').click(function(){
+			}
 
-	
-	$('#contactPage').addClass('blur-out-expand-fwd');
-	
-	$('#contactPage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	$('#contactPage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('focus-in-contract-bck');
-	
-	
-setTimeout(function(){
+			$(oldDiv).hide();
+			$(newDiv).show();
+			$(newDiv).addClass('focus-in-contract-bck');
 
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	$('#emailDiv').show();
-	$('#emailSuccessDiv').hide();
+		}, 500);
 
-		$('#contactPage').hide();
-		$('#homePage').show();
-		$('#homePage').addClass('focus-in-contract-bck');
-		
-	},500  );
-	
-});
-
-
-$('#resumeHomeButton').click(function(){
-
-	
-	$('#resumePage').addClass('blur-out-expand-fwd');
-	
-	$('#resumePage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	$('#contactPage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	
-setTimeout(function(){
-		
-		$('#homePage').removeClass('blur-out-expand-fwd');
-	    $('#resumePage').removeClass('blur-out-expand-fwd');
-		$('#resumePage').hide();
-		$('#homePage').show();
-		$('#homePage').addClass('focus-in-contract-bck');
-		
-	},500  );
-	
-});
-
-
-$('#portfolioButton').click(function(){
-	
-	$('#homePage').addClass('blur-out-expand-fwd');
-	$('#homePage').removeClass('focus-in-contract-bck');
-	$('#portfolioPage').removeClass('blur-out-expand-fwd');
-	$('#portfolioPage').removeClass('focus-in-contract-bck');
-	
-	setTimeout(function(){
-		
-		// using .css() in jquery writes it directly to the element in the html file which thus overrides the attached style sheet
-		$('.container').css("background-color", "rgba(0, 0, 0, 0.3)");
-		
-		$('#homePage').hide();
-		$('#portfolioPage').show();
-		$('#portfolioPage').addClass('focus-in-contract-bck');
-	
-	},500  );
-	
-});
-
-$('#portfolioHomeButton').click(function(){
-
-	
-	$('#portfolioPage').addClass('blur-out-expand-fwd');
-	$('#portfolioPage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	$('#portfolioPage').removeClass('focus-in-contract-bck');
-	$('#homePage').removeClass('blur-out-expand-fwd');
-	
-setTimeout(function(){
-		
-		$('#homePage').removeClass('blur-out-expand-fwd');
-	    $('#portfolioPage').removeClass('blur-out-expand-fwd');
-		$('#portfolioPage').hide();
-		
-//  This removes the html hardcoded in-element attribute, so that control reverts back to the CSS file which uses @media to decide
-		$('.container').removeAttr("style");
-		$('#homePage').show();
-		$('#homePage').addClass('focus-in-contract-bck');
-		
-	},500  );
-	
-});
-
+	});
 </script>
 
 </html>

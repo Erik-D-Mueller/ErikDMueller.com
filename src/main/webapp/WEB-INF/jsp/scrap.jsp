@@ -7,8 +7,7 @@
  
    <nav class="navbar" id="top">
     <div class="inner">
-      <a href="www.cnn.com">Read Tutorial</a>
-    </div>
+      <a href="www.cnn.com">exit back to homepage
   </nav>
   
   

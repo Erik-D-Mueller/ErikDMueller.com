@@ -111,24 +111,7 @@ In his environment the m2 folder is where maven saves the artifacts like jar fil
 
 
 
-
-
-
-
-
-
-
-
-
 'Built Artifact' means a collection of java compiled stuff.
-
-
-
-
-
-
-
-
 
 
 
