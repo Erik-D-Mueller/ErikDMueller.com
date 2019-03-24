@@ -41,10 +41,4 @@ Using code like the below apparently DOES work on everything.
 @media only screen and (min-resolution: 192dpi),
        only screen and (min-resolution: 2dppx)
        
-       Making Sense of Mac Keyboard Symbols
-⌘ is the Command () key.
-⌃ is the Control key.
-⌥ is the Option (alt) key.
-⇧ is the Shift key.
-⇪ is the Caps Lock key.
-fn is the Function key. Now you know, but if the symbols confuse you, don't feel too bad about it.
+ My big monitor has 96 dpi, my laptop has around 193dpi, newest iphone are around 400dpi

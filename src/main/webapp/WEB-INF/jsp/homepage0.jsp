@@ -44,9 +44,9 @@
 
 				<div id="paragraph">
 					<p>
-						I'm a developer, a thinker and a <br /> problem
-							solver. We're all better <br /> off if we work together, that's<br />
-							the basis for everything that I do.
+						I'm a developer, a thinker and a problem
+						solver. We're all better off if we work together, that's
+						the basis for everything that I do.
 						
 					</p>
 				</div>

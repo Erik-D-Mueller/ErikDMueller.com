@@ -36,7 +36,6 @@ body {
 
 html, body, .container {
 	
-	
 	/* it doesn't cover the whole picture without these */
 	
 	height: 100%;
@@ -65,6 +64,9 @@ h1 {
 	margin-top: 0;
 	padding-top: 0;
 	font-size: 40px;
+	
+	/* h1 line-height is necesary because my name which is an h1 stacks when the screen gets really small */
+	line-height: 40px;
 }
 
 p {
@@ -77,7 +79,6 @@ a {
 	text-decoration: none;
 	
 }
-
 
 /* Setting an outerdiv display value to "table" and the inner div display value to "table-cell"
 is by far the easiest quickest way to get the inner div to center in the outer-div, 
@@ -138,6 +139,10 @@ in this case .container and .content
 #paragraph {
 	
 	margin: 0px auto 22px auto;
+	
+	/* Setting max width is mobile responsive, linebreaks are not to control wdirth only work if the screen is bigger than the width of text*/
+	max-width: 330px;
+	
 }
 
 /* -----------------------------Medium Screen Size-----------------------*/
@@ -160,37 +165,6 @@ in this case .container and .content
 	
 	}
 	
-}
-
-/* -----------------------------Small Screen Size, high pixel density screens (phones) -----------------------*/
-
-@media only screen and (max-width: 641px), (min-resolution: 120dpi) {	
-	
-	body, h1 {
-		font-size: 18px;
-		font-weight: bold;
-		line-height: 23px;
-	}
-
-	.quote {
-		font-size: 14px;
-		line-height: 21px;
-	}
-	
-	p {
-		max-width: 150px;
-		font-size: 15px;
-		line-height: 20px;
-	}
-	
-	
-	/* Without this the audiobuttons smoosh against the nav buttons */
-	.audioButton {
-
-		margin: 10px 2px 0px 2px;
-
-	}
-
 }
 
 
