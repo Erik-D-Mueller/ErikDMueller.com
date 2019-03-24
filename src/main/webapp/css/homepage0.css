@@ -5,12 +5,13 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+	
 	/* This is the color that will display while the background picture is loading*/
 	background-color: #565454;
 }
 
-/* This switches to smaller picture to save time if the screen width is below 600px*/
 
+/* This switches to smaller picture to save time if the screen width is below 600px*/
 @media only screen and (max-width: 1000px) {
 	body {
 		background-image: url("../img/backgroundPhotoSmall.jpg");
@@ -18,7 +19,6 @@ body {
 }
 
 /* All the divs start out hidden except for homepage */
-
 #contactPage {
 	display: none;
 }
@@ -32,244 +32,168 @@ body {
 	display: none;
 }
 
-
-/* adding/removing the class is best because that way I can make changes with jquery, wihtout permanently overriding the css sheet, since .css goes onto the DOM and overrides the style sheet */
-
-
 /* -----------------------------Largest Screen Size-----------------------*/
+
 html, body, .container {
+	
+	
+	/* it doesn't cover the whole picture without these */
+	
 	height: 100%;
-}
-background-color: rgba(0, 0, 0, 0);
-
-.emailForm {
-	background-color: transparent;
-	color: ffffff;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	width: 200px;
-	color: #ffffff;
-	cursor: default;
+	width: 100%;
 	
-	height:30px;
-	width: 300px;
-	
-	font-size: 12pt;
-	font: inherit;
-	font-weight: normal;
-}
-
-
-.emailMessage {
-	background-color: transparent;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	width: 300px;
-	hieght:200px;
-	color: #ffffff;
-	cursor: default;
-	font-size:12pt;
-	
+	/* If I don't set margin to zero, the 'container' stops just short of covering
+	the entire background picture, and there is lightercolored rectangle around it */
+	margin: 0px;
+	margin: 0px;
 }
 
 html, body, h1, p, a, div, section {
-	margin: 0;
-	padding: 0;
-	font-size: 100%;
+	
 	font: inherit;
 	font-weight: bold;
+	color: #ffffff;
 }
 
+body {
+	font: 18px/23px "Cantarell", sans-serif;
+}
 
-.copyP {
-	margin: 0;
-	padding: 100;
-	font-size: 5px;
-	font: inherit;
-	font-weight: bold;
+h1 {
+	
+	/*If I don't set the top of h1 to zero, it pulls the container down somehow */
+	margin-top: 0;
+	padding-top: 0;
+	font-size: 40px;
+}
+
+p {
+	margin: auto auto 15px auto;
+}
+
+a {
+
+/* Without this it underlines links, making jquery vs href-link buttons look different */
+	text-decoration: none;
 	
 }
 
 
-body {
-	font: 18px/23px "Cantarell", sans-serif;
-	color: #ffffff;
-}
-
-h1 {
-	color: #ffffff;
-	text-transform: uppercase;
-	font-size: 40px;
-	line-height: 50px;
-	font-weight: 400;
-	margin-top: 0px;
-}
-
-p {
-	margin: 0 0 15px 0;
-}
-
-strong {
-	font-weight: 700;
-}
-
-a {
-	display: inline-block;
-	font-size: 14px;
-	line-height: 24px;
-	border-radius: 3px;
-	padding: 2px 15px;
-	text-decoration: none;
-	margin-top: 5px;
-	color: #ffffff;
-}
+/* Setting an outerdiv display value to "table" and the inner div display value to "table-cell"
+is by far the easiest quickest way to get the inner div to center in the outer-div, 
+in this case .container and .content
+*/
 
 .container {
+	
 	display: table;
-	padding-top: 0px;
-	width: 100%;
+	
+	/*Somehow it knows to flip back without this */
 	background-color: rgba(0, 0, 0, 0);
+
 }
 
 .content {
+	
+	display: table-cell;
 	margin-top: 100px;
 	margin-right: 40px;
-	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
 	float: right;
 }
 
-.mainButton {
+.mainButton {	
+	
+	margin-top: 5px;
 	display: inline-block;
+	font-size: 16px;
 	padding: 6px 10px;
 	color: #ffffff;
 	border: 4px solid #ffffff;
-	border-radius: 3px;
-	font-weight: 700;
-	line-height: normal;
-	text-decoration: none;
-	text-align: center;
-	width: 120px;
 	border-radius: 15px;
+	font-weight: 700;
+	width: 120px;
+	
 }
 
 .audioButton {
-	margin: 0;
-	padding: 0;
-	font: inherit;
-	font-weight: bold;
+	
 	display: inline-block;
 	padding: 0px 2px 0px 2px;
 	color: #ffffff;
-	border: 1px solid #ffffff;
-	border-radius: 3px;
-	font-weight: 70;
-	line-height: normal;
-	text-decoration: none;
-	text-align: center;
+	border: 2px solid #ffffff;
+	border-radius: 5px;
+	font-weight: 500;
 	background-color: Transparent;
 	font-size: 15px;
-	float: center;
+	
 }
 
 #quote {
-	font-size: 18px;
-	line-height: 23px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	margin-top: 10px;
-	margin-bottom: 0px;
+
+	margin: 10px auto 0px auto;
 }
 
 #paragraph {
-	padding-top: 0px;
-	padding-bottom: 0px;
-	margin-top: 0px;
-	margin-bottom: 22px;
+	
+	margin: 0px auto 22px auto;
 }
 
 /* -----------------------------Medium Screen Size-----------------------*/
 
-@media only screen and (max-width: 1000px) {
-	/*This floats the content center if screen is small */
-		.content {
-	    margin-top: auto;
-		margin-right: 30px;
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
-		float: none;
+
+/*This moves the content to the cener center and darkens background if screen is smaller than 1000px */
+@media only screen and (max-width: 1070px) {
+	
+	
+	.content {
+
+	/* The float automatically over-rides the margins they're at 100 and 40 above */
+	
+	float: none;
+
 	}
-	/* This shades the background if it's white text on white background*/
 	.container {
+	
 		background-color: rgba(0, 0, 0, 0.3);
+	
 	}
 	
 }
 
-/* -----------------------------Small Screen Size-----------------------*/
-@media only screen and (max-width: 320px) {
-	.container {
-		position: relative;
-		display: block;
-		float: left;
-		vertical-align: baseline;
-		margin: 0 auto;
-		padding: 80px 0 0 0;
-		background-color: rgba(0, 0, 0, 0.3);
+/* -----------------------------Small Screen Size, high pixel density screens (phones) -----------------------*/
 
-	}
+@media only screen and (max-width: 641px), (min-resolution: 120dpi) {	
+	
 	body, h1 {
 		font-size: 18px;
 		font-weight: bold;
 		line-height: 23px;
 	}
-	.content {
-		display: inline;
-		margin: 0 auto;
-		padding-top: 80px;
-		vertical-align: center;
 
-	}
 	.quote {
 		font-size: 14px;
 		line-height: 21px;
 	}
-	.button, p {
+	
+	p {
 		max-width: 150px;
-		margin: 0 auto;
 		font-size: 15px;
 		line-height: 20px;
 	}
+	
+	
+	/* Without this the audiobuttons smoosh against the nav buttons */
 	.audioButton {
-		float: center;
-	}
-	html, body, .container {
-		height: auto;
-	}
-	.audioButton {
+
 		margin: 10px 2px 0px 2px;
-		padding: 0;
-		font: inherit;
-		font-weight: bold;
-		display: inline-block;
-		padding: 0px 2px 0px 2px;
-		color: #ffffff;
-		border: 1px solid #ffffff;
-		border-radius: 3px;
-		font-weight: 70;
-		line-height: normal;
-		text-decoration: none;
-		text-align: center;
-		background-color: Transparent;
-		font-size: 15px;
+
 	}
+
 }
 
-/*-- this makes the contacts/home page fade in and out */
+
 .blur-out-expand-fwd {
 	-webkit-animation-duration: 0.5s;
 	animation-duration: 0.5s;

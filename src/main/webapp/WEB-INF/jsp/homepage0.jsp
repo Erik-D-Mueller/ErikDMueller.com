@@ -30,23 +30,24 @@
 
 	<div class="container">
 
-		<section class="content">
+		<div class="content">
+		
 			<div id="homePage">
 
-				<h1 id="name">Erik D Mueller</h1>
+				<h1 id="name">ERIK D MUELLER</h1>
 
 				<div id="quote">
 					<p>
-						<strong>A picture is worth a thousand words</strong>
+						A picture is worth a thousand words
 					</p>
 				</div>
 
 				<div id="paragraph">
 					<p>
-						<strong> I'm a developer, a thinker and a <br /> problem
+						I'm a developer, a thinker and a <br /> problem
 							solver. We're all better <br /> off if we work together, that's<br />
 							the basis for everything that I do.
-						</strong>
+						
 					</p>
 				</div>
 				<p>
@@ -133,10 +134,10 @@
 				<h5>Tool Lending Library Inventory Management Software</h5>
 
 
-				<div class="copyP">
+				<div>
 
-					<ul class="copyP">
-						<li class="copyP">Java Spring MVC website with session for
+					<ul>
+						<li>Java Spring MVC website with session for
 							user preferences</li>
 						<li>Uses 9 controllers, 4 DAOs, 11 classes and a 5 table
 							postgresql database</li>
@@ -167,7 +168,7 @@
 				</p>
 			</div>
 
-		</section>
+		</div>
 	</div>
 </body>
 <script src="${jquery}"></script>

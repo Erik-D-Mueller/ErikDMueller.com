@@ -1,0 +1,50 @@
+css declarations refer to css pixels, not physical pixels.
+
+Before higher density displays existed, 800 pixels actually meant 800 physical pixels.
+But now that we have super high pixel-density screens, it's not so simple.
+
+We now have to consider the pixel ratio, which is what relates hardware pixels to css pixels.
+
+CSS pixel = PhysicalPixels/PixelDensity
+
+PixelDensity = #PhysicalPixels / CSSPixels
+
+
+
+
+screen.width is the width of the users entire screen, not necesarily just the browser window.
+Width is just the browser window, not the entire screen.
+
+
+@Mediaquery resolution is the pixel density of the output device. 
+
+Values from the meta tag, in html, measure actual physical pixels, not css pixels, since they are not a part of css.
+device-width in the meta tag measures screen width.
+
+https://stackoverflow.com/questions/11722442/is-there-a-way-to-use-dpi-in-css-media-queries-instead-of-px
+
+
+
+Apparently we can use code like the below, but it only works on chrome, opera and safari, not firefox or internetexplorer.
+
+@media only screen and (-moz-min-device-pixel-ratio: 2), 
+       only screen and (-o-min-device-pixel-ratio: 2/1), 
+       only screen and (-webkit-min-device-pixel-ratio: 2), 
+       only screen and (min-device-pixel-ratio: 2) {
+ /*use CSS to swap out your low res images with high res ones here*/
+}   
+
+
+
+Using code like the below apparently DOES work on everything.
+
+@media only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx)
+       
+       Making Sense of Mac Keyboard Symbols
+⌘ is the Command () key.
+⌃ is the Control key.
+⌥ is the Option (alt) key.
+⇧ is the Shift key.
+⇪ is the Caps Lock key.
+fn is the Function key. Now you know, but if the symbols confuse you, don't feel too bad about it.
