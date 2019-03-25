@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import java.io.Console;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -45,8 +46,7 @@ public class EDMFileDownloadController
     {
         //Check the renderer
         if(referer != null && !referer.isEmpty()) {
-            //do nothing
-            //or send error
+   
         }
         //If user is not authorized - he should be thrown out from here itself
          

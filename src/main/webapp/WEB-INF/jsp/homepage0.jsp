@@ -4,8 +4,13 @@
 <html lang="en">
 <meta charset="utf-8" content="IE=edge,chrome=1"
 	http-equiv="X-UA-Compatible">
+
+	<!--  I purposely don't put "initial-scale=1" in the viewport element because if I do then it allows the 
+		viewport to momentarily stretch bigger to accomodate the CSS dissolve animation which messes everything up
+	 -->
+	
 	<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	content="width=device-width, shrink-to-fit=no">
 <head>
 
 <c:url var="paperResume" value="/download/pdf/ErikDMueller_Paper_Resume.pdf" />
@@ -70,7 +75,7 @@
 				</p>
 
 				<audio id="bgm" autoplay>
-
+					
 					<source
 						src="https://raw.githubusercontent.com/ErikUnique/ResumeWebsite/master/HomeAudioClip%20(online-audio-converter.com).mp3"
 						type="audio/mpeg" />
@@ -132,7 +137,6 @@
 				<h1>portfolio</h1>
 				<br />
 				<h5>Tool Lending Library Inventory Management Software</h5>
-
 
 				<div>
 

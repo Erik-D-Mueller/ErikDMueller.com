@@ -3,13 +3,15 @@ body {
 	background-image: url("../img/backgroundPhotoLarge.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
+	
+	/*This locks the background in place, text scrolls ontop of it */
 	background-attachment: fixed;
 	background-size: cover;
 	
-	/* This is the color that will display while the background picture is loading*/
+	/* display gray while the background picture is loading*/
 	background-color: #565454;
-}
 
+}
 
 /* This switches to smaller picture to save time if the screen width is below 600px*/
 @media only screen and (max-width: 1000px) {
@@ -37,14 +39,13 @@ body {
 html, body, .container {
 	
 	/* it doesn't cover the whole picture without these */
-	
 	height: 100%;
 	width: 100%;
-	
+
 	/* If I don't set margin to zero, the 'container' stops just short of covering
 	the entire background picture, and there is lightercolored rectangle around it */
 	margin: 0px;
-	margin: 0px;
+
 }
 
 html, body, h1, p, a, div, section {
@@ -89,7 +90,7 @@ in this case .container and .content
 	
 	display: table;
 	
-	/*Somehow it knows to flip back without this */
+	/*Trying to fix glitch issue on iphone */
 	background-color: rgba(0, 0, 0, 0);
 
 }
@@ -140,10 +141,12 @@ in this case .container and .content
 	
 	margin: 0px auto 22px auto;
 	
-	/* Setting max width is mobile responsive, linebreaks are not to control wdirth only work if the screen is bigger than the width of text*/
+	/* Setting max width is mobile responsive, linebreaks are not to control wdirth only work if 
+	the screen is bigger than the width of text*/
 	max-width: 330px;
 	
 }
+
 
 /* -----------------------------Medium Screen Size-----------------------*/
 
@@ -159,14 +162,17 @@ in this case .container and .content
 	float: none;
 
 	}
+	
 	.container {
 	
 		background-color: rgba(0, 0, 0, 0.3);
-	
+		
+		/* Trying to fix phone glitch */
+		height: 100%;
+		
 	}
 	
 }
-
 
 .blur-out-expand-fwd {
 	-webkit-animation-duration: 0.5s;
@@ -182,5 +188,42 @@ in this case .container and .content
 	animation-name: focus-in-contract-bck;
 }
 
-@-webkit-keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}@keyframes focus-in-contract-bck{0%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px);filter:blur(12px);opacity:0}100%{-webkit-transform:translateZ(12px);transform:translateZ(12px);-webkit-filter:blur(0);filter:blur(0);opacity:1}}
-@-webkit-keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(.01);filter:blur(.01)}100%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}@keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-filter:blur(.01);filter:blur(.01)}100%{letter-spacing:1em;-webkit-transform:translateZ(300px);transform:translateZ(300px);-webkit-filter:blur(12px) opacity(0);filter:blur(12px) opacity(0)}}
+@-webkit-keyframes focus-in-contract-bck{0%{letter-spacing:1em;
+-webkit-transform:translateZ(300px);
+transform:translateZ(300px);
+-webkit-filter:blur(12px);
+filter:blur(12px);
+opacity:0}100%{-webkit-transform:translateZ(12px);
+transform:translateZ(12px);
+-webkit-filter:blur(0);
+filter:blur(0);
+opacity:1}}
+
+@keyframes focus-in-contract-bck{0%{letter-spacing:1em;
+-webkit-transform:translateZ(300px);
+transform:translateZ(300px);
+-webkit-filter:blur(12px);
+filter:blur(12px);
+opacity:0}100%{-webkit-transform:translateZ(12px);
+transform:translateZ(12px);
+-webkit-filter:blur(0);
+filter:blur(0);
+opacity:1}}
+
+@-webkit-keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);
+transform:translateZ(0);
+-webkit-filter:blur(.01);
+filter:blur(.01)}100%{letter-spacing:1em;
+-webkit-transform:translateZ(300px);
+transform:translateZ(300px);
+-webkit-filter:blur(12px) opacity(0);
+filter:blur(12px) opacity(0)}}
+
+@keyframes blur-out-expand-fwd{0%{-webkit-transform:translateZ(0);
+transform:translateZ(0);
+-webkit-filter:blur(.01);
+filter:blur(.01)}100%{letter-spacing:1em;
+-webkit-transform:translateZ(300px);
+transform:translateZ(300px);
+-webkit-filter:blur(12px) opacity(0);
+filter:blur(12px) opacity(0)}}
