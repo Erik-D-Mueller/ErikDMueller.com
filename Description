@@ -1,5 +1,3 @@
-Project Description
+This is a website that I have built for two businesswomen who are starting a triathlon training camp.
 
-Hi,
-
-     Here is a project that I've been working on with three other people.  It is a web-app to manage a community tool lending program, similar to a library but for tools.  We're using bitbucket, not Github, hence I pushed it all up in on shot.  It runs off of a postgresql database of tools and members which you can install with a shell command located in the database folder.  The app has two login modes, librarian or member.  The register page has client and server side form validation and uses a salt on the password and a CSRF filter.  Once logged in, a librarian can select memebers and add tools to their shopping cart and and check them out.  Members can log in and edit their personal information.  It pulls down from a CDN which appears to a bit slow, because it looks ugly for a slit second after loading.
+It is about half finished because they have not given me the rest of the content.
